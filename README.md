@@ -3,15 +3,15 @@
 # For Isak and his followers :
 ## For full setup
      git clone --depth=1 https://github.com/isakhammer/vimrc.git ~/.vim_runtime
-     bash ~/.vim_runtime/install_awesome_setup.sh
+     bash ~/.vim_runtime/install/install_awesome_setup.sh
 
 ## For only vimrc 
      git clone --depth=1 https://github.com/isakhammer/vimrc.git ~/.vim_runtime
-     bash ~/.vim_runtime/install_awesome_vimrc.sh
+     bash ~/.vim_runtime/install/install_awesome_vimrc.sh
 
 ## For only bash 
      git clone --depth=1 https://github.com/isakhammer/vimrc.git ~/.vim_runtime
-     bash ~/.vim_runtime/install_awesome_bashrc.sh
+     bash ~/.vim_runtime/install/install_awesome_bashrc.sh
 
 # The Ultimate vimrc
 
@@ -30,15 +30,15 @@ I would, of course, recommend using the awesome version.
 The awesome version includes a lot of great plugins, configurations and color schemes that make Vim a lot better. To install it simply do following from your terminal:
 
 	git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
-	sh ~/.vim_runtime/install_awesome_vimrc.sh
+	sh ~/.vim_runtime/install/install_awesome_vimrc.sh
 	
 ### Install for multiple users
 To install for multiple users, the repository needs to be cloned to a location accessible for all the intended users.
 
 	git clone --depth=1 https://github.com/amix/vimrc.git /opt/vim_runtime
-	sh ~/.vim_runtime/install_awesome_parameterized.sh /opt/vim_runtime user0 user1 user2
+	sh ~/.vim_runtime/install/install_awesome_parameterized.sh /opt/vim_runtime user0 user1 user2
 	# to install for all users with home directories
-	sh ~/.vim_runtime/install_awesome_parameterized.sh /opt/vim_runtime --all
+	sh ~/.vim_runtime/install/install_awesome_parameterized.sh /opt/vim_runtime --all
 	
 Naturally, `/opt/vim_runtime` can be any directory, as long as all the users specified have read access.
 
@@ -58,7 +58,7 @@ The basic version is just one file and no plugins. Just copy [basic.vim](https:/
 The basic version is useful to install on remote servers where you don't need many plugins, and you don't do many edits.
 
 	git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
-	sh ~/.vim_runtime/install_basic_vimrc.sh
+	sh ~/.vim_runtime/install/install_basic_vimrc.sh
 
 
 ## How to install on Windows?
