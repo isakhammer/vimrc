@@ -1,7 +1,5 @@
 #!/bin/sh
 
-chmod +x -R *
-
 source ~/.vim_runtime/custom/install_programs.sh
 
 echo "Making backup of your ~/.bashrc at: ~/.bashrc_backup_"$NOW
