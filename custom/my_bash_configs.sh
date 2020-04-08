@@ -1,13 +1,27 @@
 #!/bin/bash
 
-# function execute_cmd_in_background()  {
-#     array="${@}"
-#     eval $array 1> /dev/null &
-# }
+ function install_plugin()  {
+    cd ~/.vim_runtime/my_plugins
+    ssh_key=$1
 
-# function kill_running_cmds() {
-#     for i in $(jobs -pr); do kill -9 $i; done;
-# }
+    # Get name from ssh key
+    echo "$ssh_key">tmp_ssh_key.txt
+    vim -s ~/.vim_runtime/custom/get_ssh_name.txt tmp_ssh_key.txt
+    read -r ssh_name<tmp_ssh_key.txt
+    rm -Rf tmp_ssh_key.txt
+
+    # clone plugin
+    git clone $ssh_key $ssh_name
+ }
+
+ function execute_cmd_in_background()  {
+     array="${@}"
+     eval $array 1> /dev/null &
+ }
+
+ function kill_running_cmds() {
+     for i in $(jobs -pr); do kill -9 $i; done;
+ }
 
 # Welcome text
 cowsay Get started $(whoami)
@@ -26,3 +40,6 @@ alias kex="kill_running_cmds; echo jobs"
 
 # Alias to access vim_runtime quick
 alias rt="cd ~/.vim_runtime/"
+
+
+
