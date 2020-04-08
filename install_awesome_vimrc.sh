@@ -7,7 +7,7 @@ VIMRC_BACKUP="~/.vimrc_backup_"$NOW
 echo "Making backup of your ~/.vimrc at: ~/.vimrc_backup_"$NOW
 cp ~/.vimrc ~/.vimrc_backup_$NOW
 
-echo "Writing into your ~/.vimrc."
+echo "Overwriting into your ~/.vimrc."
 echo "Starting writing"
 sleep 0.5
 echo "====="
@@ -20,9 +20,9 @@ source ~/.vim_runtime/vimrcs/plugins_config.vim
 source ~/.vim_runtime/vimrcs/extended.vim
 
 try
-source ~/.vim_runtime/my_configs.vim
+source ~/.vim_runtime/custom/my_vim_configs.vim
 catch
-endtry' |& tee -a ~/.vimrc
+endtry' |& tee ~/.vimrc
 
 echo ""
 echo "====="
