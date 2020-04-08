@@ -16,3 +16,4 @@ sleep 0.5
 echo "Finished writing"
 
 echo "Installed the Ultimate Isak Bash configuration successfully! Enjoy :-)"
+source ~/.bashrc
