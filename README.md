@@ -1,17 +1,17 @@
 ![VIM](https://dnp4pehkvoo6n.cloudfront.net/43c5af597bd5c1a64eb1829f011c208f/as/Ultimate%20Vimrc.svg)
 
-### For Isak and his followers :
-# For full setup
+# For Isak and his followers :
+## For full setup
      git clone --depth=1 https://github.com/isakhammer/vimrc.git ~/.vim_runtime
-     sh ~/.vim_runtime/install_awesome_setup.sh
+     bash ~/.vim_runtime/install_awesome_setup.sh
 
-# For only vimrc 
+## For only vimrc 
      git clone --depth=1 https://github.com/isakhammer/vimrc.git ~/.vim_runtime
-     sh ~/.vim_runtime/install_awesome_vimrc.sh
+     bash ~/.vim_runtime/install_awesome_vimrc.sh
 
-# For only bash 
+## For only bash 
      git clone --depth=1 https://github.com/isakhammer/vimrc.git ~/.vim_runtime
-     sh ~/.vim_runtime/install_awesome_bashrc.sh
+     bash ~/.vim_runtime/install_awesome_bashrc.sh
 
 # The Ultimate vimrc
 
