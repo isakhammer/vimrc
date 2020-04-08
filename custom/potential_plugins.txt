@@ -1,0 +1,2 @@
+# Nice for global setup for tabs and other stuff
+https://github.com/editorconfig/editorconfig-vim
