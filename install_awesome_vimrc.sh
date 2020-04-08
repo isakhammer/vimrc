@@ -3,12 +3,11 @@ set -e
 
 cd ~/.vim_runtime
 NOW=$(date +"%m-%d-%y-%T")
-VIMRC_BACKUP="~/.vimrc_backup_"$NOW
 echo "Making backup of your ~/.vimrc at: ~/.vimrc_backup_"$NOW
 cp ~/.vimrc ~/.vimrc_backup_$NOW
 
 echo "Overwriting into your ~/.vimrc."
-echo "Starting writing"
+echo "Starts writing"
 sleep 0.5
 echo "====="
 echo ""
@@ -24,6 +23,20 @@ source ~/.vim_runtime/custom/my_vim_configs.vim
 catch
 endtry' |& tee ~/.vimrc
 
+echo ""
+echo "====="
+sleep 0.5
+echo "Finished writing"
+
+
+echo "Making backup of your ~/.bashrc at: ~/.bashrc_backup_"$NOW
+cp ~/.bashrc ~/.bashrc_backup_$NOW
+echo "Writing into your ~/.bashrc."
+echo "Starts writing"
+sleep 0.5
+echo "====="
+echo ""
+echo 'source ~/.vim_runtime/custom/my_bash_configs.sh' |& tee -a ~/.bashrc
 echo ""
 echo "====="
 sleep 0.5
