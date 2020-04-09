@@ -5,11 +5,11 @@
      git clone --depth=1 https://github.com/isakhammer/vimrc.git ~/.vim_runtime
      bash ~/.vim_runtime/install/install_awesome_setup.sh
 
-## For only vimrc 
+## For vimrc only 
      git clone --depth=1 https://github.com/isakhammer/vimrc.git ~/.vim_runtime
      bash ~/.vim_runtime/install/install_awesome_vimrc.sh
 
-## For only bash 
+## For bash only
      git clone --depth=1 https://github.com/isakhammer/vimrc.git ~/.vim_runtime
      bash ~/.vim_runtime/install/install_awesome_bashrc.sh
 
