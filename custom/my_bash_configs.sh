@@ -32,6 +32,12 @@ set -o vi
 # Alias for editing custom bashrc
 alias mysh="vim ~/.vim_runtime/custom/my_bash_configs.sh"
 
+# Alias for editing bashrc
+alias shrc="vim ~/.bashrc"
+
+# Alias for sourcing bashrc
+alias s="source ~/.bashrc"
+
 # Alias for executing in background
 alias ex="execute_cmd_in_background"
 
@@ -41,5 +47,6 @@ alias kex="kill_running_cmds; echo jobs"
 # Alias to access vim_runtime quick
 alias rt="cd ~/.vim_runtime/"
 
-
+# rdv aliases
+alias cm="cd ~/catkin_rdv && catkin_make; cd -"
 
