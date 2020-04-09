@@ -1,5 +1,7 @@
 #!/bin/sh
 set -e
+sudo apt install vim
+touch ~/.vimrc
 
 cd ~/.vim_runtime
 NOW=$(date +"%m-%d-%y-%T")
