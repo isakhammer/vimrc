@@ -1,1 +1,1 @@
-sudo apt-get moo
+sudo apt install cowsay
