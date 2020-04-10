@@ -59,6 +59,12 @@ alias rt="cd ~/.vim_runtime/"
 # rdv aliases
 alias cm="cd ~/catkin_rdv && catkin_make; cd -"
 
+# Pdf manager
+alias oku="okular"
+
+# Lightweight pdf viewer
+alias zat="zathura"
+
 # Personal aliases
 alias research="cd ~/Documents/research"
 
