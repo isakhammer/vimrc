@@ -8,9 +8,9 @@ echo "Writing into your ~/.bashrc."
 echo "Starts writing"
 sleep 0.5
 echo "====="
-echo ""
+echo "" |& tee -a ~/.bashrc
 echo 'source ~/.vim_runtime/custom/my_bash_configs.sh' |& tee -a ~/.bashrc
-echo ""
+echo "" |& tee -a ~/.bashrc
 echo "====="
 sleep 0.5
 echo "Finished writing"
