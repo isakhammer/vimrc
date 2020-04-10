@@ -30,10 +30,19 @@ cowsay Get started $(whoami)
 set -o vi
 
 # Alias for editing custom bashrc
+alias myvim="vim ~/.vim_runtime/custom/my_vim_configs.vim"
+
+# Alias for editing custom bashrc
 alias mysh="vim ~/.vim_runtime/custom/my_bash_configs.sh"
+
+# Alias for editing custom bashrc
+alias myprgms="vim ~/.vim_runtime/custom/install_programs.sh"
 
 # Alias for editing bashrc
 alias shrc="vim ~/.bashrc"
+
+# Alias for sourcing bashrc
+alias c="clear"
 
 # Alias for sourcing bashrc
 alias s="source ~/.bashrc"
