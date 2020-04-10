@@ -59,3 +59,6 @@ alias rt="cd ~/.vim_runtime/"
 # rdv aliases
 alias cm="cd ~/catkin_rdv && catkin_make; cd -"
 
+# Personal aliases
+alias research="cd ~/Documents/research"
+
