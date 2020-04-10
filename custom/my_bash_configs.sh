@@ -65,6 +65,9 @@ alias oku="okular"
 # Lightweight pdf viewer
 alias zat="zathura"
 
+# Open google chrome
+alias chrome="chromium-browser"
+
 # Personal aliases
 alias research="cd ~/Documents/research"
 
