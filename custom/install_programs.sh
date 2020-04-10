@@ -4,6 +4,8 @@ sudo apt-get install xdotool
 sudo apt-get install latexmk
 
 sudo apt install docker.io
-sudo usermod -aG docker ${USER}
-su - ${USER}
+# According to some sources said that this was necessary to install docker
+#sudo usermod -aG docker ${USER}
+#su - ${USER}
+
 
