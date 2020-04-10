@@ -29,19 +29,19 @@ cowsay Get started $(whoami)
 # Starting vim mode in terminal
 set -o vi
 
-# Alias for editing custom bashrc
+# Alias for editing personal vim configs
 alias myvim="vim ~/.vim_runtime/custom/my_vim_configs.vim"
 
-# Alias for editing custom bashrc
+# Alias for editing personal bash configs
 alias mysh="vim ~/.vim_runtime/custom/my_bash_configs.sh"
 
-# Alias for editing custom bashrc
-alias myprgms="vim ~/.vim_runtime/custom/install_programs.sh"
+# Alias for editing programs installation.
+alias myprgms="vim ~/.vim_runtime/install/install_programs.sh"
 
 # Alias for editing bashrc
 alias shrc="vim ~/.bashrc"
 
-# Alias for sourcing bashrc
+# Alias for cleaning terminal.
 alias c="clear"
 
 # Alias for sourcing bashrc

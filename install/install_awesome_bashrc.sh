@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source ~/.vim_runtime/custom/install_programs.sh
+source ~/.vim_runtime/install/install_programs.sh
 
 echo "Making backup of your ~/.bashrc at: ~/.bashrc_backup_"$NOW
 cp ~/.bashrc ~/.bashrc_backup_$NOW
