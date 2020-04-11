@@ -1,3 +1,0 @@
-/my_bash_configs
-dd
-:wq
