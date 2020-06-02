@@ -1,6 +1,23 @@
 set number
-set tabstop=4
 set relativenumber
+
+set cindent
+set tabstop     =2
+set softtabstop =2
+set shiftwidth  =2
+set expandtab
+" if &filetype ==# 'c' || &filetype ==# 'h'|| &filetype ==# 'cpp'
+"     set tabstop=2
+"     set softtabstop=2
+"     set shiftwidth=2"
+" else
+"     set tabstop=4
+"     set softtabstop=4
+"     set shiftwidth=4"
+" endif
+
+
+
 nmap <F12> :let $MYFILE=expand('%')<CR>:terminal<CR>echo $MYFILE<CR>
 nnoremap <F9> 6<C-w>> 
 nnoremap <F10> 6<C-w>< 
