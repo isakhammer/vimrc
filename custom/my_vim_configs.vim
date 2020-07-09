@@ -53,3 +53,4 @@ cabbrev vb vert sb
 " Tab buffer
 cabbrev tb vert sb
 
+#colorscheme default
