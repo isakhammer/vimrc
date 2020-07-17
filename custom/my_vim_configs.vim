@@ -52,5 +52,14 @@ set wildmenu
 cabbrev vb vert sb
 " Tab buffer
 cabbrev tb vert sb
+"colorscheme desert
 
-#colorscheme desert
+""""""""""""""""""""""""""""""
+" => Vimtex Plugin
+""""""""""""""""""""""""""""""
+let maplocalleader = "\\"
+let g:Tex_DefaultTargetFormat='pdf'
+let g:vimtex_view_enabled=1
+let g:vimtex_view_automatic=1
+let g:vimtex_view_general_viewer = 'zathura'
+let g:vimtex_view_method='zathura'
