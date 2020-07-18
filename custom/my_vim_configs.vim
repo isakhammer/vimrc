@@ -52,7 +52,6 @@ set wildmenu
 cabbrev vb vert sb
 " Tab buffer
 cabbrev tb vert sb
-"colorscheme desert
 
 """"""""""""""""""""""""""""""
 " => Vimtex Plugin
@@ -63,6 +62,10 @@ let g:vimtex_view_enabled=1
 let g:vimtex_view_automatic=1
 let g:vimtex_view_general_viewer = 'zathura'
 let g:vimtex_view_method='zathura'
+" Clean directory of generated files
+nnoremap <localleader>lc :VimtexStop<cr>:VimtexClean<cr>
+nnoremap <localleader>lca :VimtexStop<cr>:VimtexClean!<cr>
+
 
 let g:tex_flavor='latex'
 let g:vimtex_quickfix_mode=0
