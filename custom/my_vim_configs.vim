@@ -18,6 +18,9 @@ set expandtab
 
 
 
+" Source vim 
+nmap <leader>so :source $MYVIMRC
+
 nmap <F12> :let $MYFILE=expand('%')<CR>:terminal<CR>echo $MYFILE<CR>
 nnoremap <F9> 6<C-w>> 
 nnoremap <F10> 6<C-w>< 
@@ -65,6 +68,10 @@ let g:vimtex_view_method='zathura'
 " Clean directory of generated files
 nnoremap <localleader>lc :VimtexStop<cr>:VimtexClean<cr>
 nnoremap <localleader>lca :VimtexStop<cr>:VimtexClean!<cr>
+
+" incscape-figures plugin
+inoremap <localleader>f <Esc>: silent exec '.!inkscape-figures create "'.getline('.').'" "'.b:vimtex.root.'/figures/"'<CR><CR>:w<CR>
+nnoremap <localleader>f : silent exec '!inkscape-figures edit "'.b:vimtex.root.'/figures/" > /dev/null 2>&1 &'<CR><CR>:redraw!<CR>
 
 
 let g:tex_flavor='latex'
