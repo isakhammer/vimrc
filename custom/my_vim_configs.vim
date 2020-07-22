@@ -55,19 +55,34 @@ set wildmenu
 cabbrev vb vert sb
 " Tab buffer
 cabbrev tb vert sb
+"
+""""""""""""""""""""""""""""""
+" => vim-autosave plugin
+""""""""""""""""""""""""""""""
+
+function EnableAutoSave()
+  let g:auto_save = 1  
+  let g:auto_save_events = ["InsertLeave", "TextChanged","CursorHold", "CursorHoldI"] 
+endfunction
 
 """"""""""""""""""""""""""""""
 " => Vimtex Plugin
 """"""""""""""""""""""""""""""
+
+
 let maplocalleader = "\\"
 let g:Tex_DefaultTargetFormat='pdf'
 let g:vimtex_view_enabled=1
 let g:vimtex_view_automatic=1
 let g:vimtex_view_general_viewer = 'zathura'
 let g:vimtex_view_method='zathura'
+"
 " Clean directory of generated files
 nnoremap <localleader>lc :VimtexStop<cr>:VimtexClean<cr>
 nnoremap <localleader>lca :VimtexStop<cr>:VimtexClean!<cr>
+
+" Autosave
+au BufRead,BufNewFile *.tex :call EnableAutoSave()
 
 " incscape-figures plugin
 inoremap <localleader>f <Esc>: silent exec '.!inkscape-figures create "'.getline('.').'" "'.b:vimtex.root.'/figures/"'<CR><CR>:w<CR>
