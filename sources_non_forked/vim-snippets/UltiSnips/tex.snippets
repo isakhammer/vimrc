@@ -296,16 +296,26 @@ snippet template "Basic template" b
 \end{document}
 endsnippet
 
+snippet pac "Package" b
+\usepackage[${1:options}]{${2:package}}$0
+endsnippet
+
+
+priority 100
+snippet ... "ldots" iA
+\ldots
+endsnippet
+
+##########################
+#  General Environments  #
+##########################
+
 snippet beg "begin{} / end{}" bA
 \\begin{$1}
 	$0
 \\end{$1}
 endsnippet
 
-priority 100
-snippet ... "ldots" iA
-\ldots
-endsnippet
 
 snippet table "Table environment" b
 \begin{table}[${1:htpb}]
@@ -345,22 +355,15 @@ snippet desc "Description" b
 \end{description}
 endsnippet
 
-snippet pac "Package" b
-\usepackage[${1:options}]{${2:package}}$0
+snippet ans "Answer Box" b
+\begin{tcolorbox}
+	\textbf{Answer.} $0
+\end{tcolorbox}
 endsnippet
 
-snippet => "implies" Ai
-\implies
-endsnippet
-
-snippet =< "implied by" Ai
-\impliedby
-endsnippet
-
-context "math()"
-snippet iff "iff" Ai
-\iff
-endsnippet
+######################
+#  Math Environment  #
+######################
 
 snippet mk "Math" wA
 $${1}$`!p
@@ -381,6 +384,23 @@ snippet ali "Align" bA
 \begin{align*}
 	${1:${VISUAL}}
 .\end{align*}
+endsnippet
+
+########################
+#  Math Functionality  #
+########################
+
+snippet => "implies" Ai
+\implies
+endsnippet
+
+snippet =< "implied by" Ai
+\impliedby
+endsnippet
+
+context "math()"
+snippet iff "iff" Ai
+\iff
 endsnippet
 
 
