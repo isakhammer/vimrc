@@ -69,7 +69,6 @@ endfunction
 " => Vimtex Plugin
 """"""""""""""""""""""""""""""
 
-
 let maplocalleader = "\\"
 let g:Tex_DefaultTargetFormat='pdf'
 let g:vimtex_view_enabled=1
@@ -88,18 +87,27 @@ au BufRead,BufNewFile *.tex :call EnableAutoSave()
 inoremap <localleader>f <Esc>: silent exec '.!inkscape-figures create "'.getline('.').'" "'.b:vimtex.root.'/figures/"'<CR><CR>:w<CR>
 nnoremap <localleader>f : silent exec '!inkscape-figures edit "'.b:vimtex.root.'/figures/" > /dev/null 2>&1 &'<CR><CR>:redraw!<CR>
 
-
 let g:tex_flavor='latex'
 let g:vimtex_quickfix_mode=0
-set conceallevel=1
-let g:tex_conceal='abdmg'
-
-hi Conceal ctermbg=none
-"colorscheme desert
 
 
 
-" Ultisnips plugin
+""""""""""""""""""""""""""""""
+" => Ultisnips plugin
+"""""""""""""""""""""""""""""""
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
+
+""""""""""""""""""""""""""""""
+" => Tex Conceal Plugin
+"
+"""""""""""""""""""""""""""""""
+set conceallevel=1
+let g:tex_conceal='abdmg'
+hi Conceal ctermbg=none
+
+
+
+
+"colorscheme desert
