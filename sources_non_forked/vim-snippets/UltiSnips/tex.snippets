@@ -126,48 +126,6 @@
 # $0
 # endsnippet
 
-# snippet sec "Section"
-# \section{${1:${VISUAL:section name}}}%
-# \label{sec:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
-
-# $0
-# endsnippet
-
-# snippet sec* "Section"
-# \section*{${1:${VISUAL:section name}}}%
-# \label{sec:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
-
-# ${0}
-# endsnippet
-
-
-# snippet sub "Subsection"
-# \subsection{${1:${VISUAL:subsection name}}}%
-# \label{sub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
-
-# $0
-# endsnippet
-
-# snippet sub* "Subsection"
-# \subsection*{${1:${VISUAL:subsection name}}}%
-# \label{sub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
-
-# ${0}
-# endsnippet
-
-# snippet ssub "Subsubsection"
-# \subsubsection{${1:${VISUAL:subsubsection name}}}%
-# \label{ssub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
-
-# $0
-# endsnippet
-
-# snippet ssub* "Subsubsection"
-# \subsubsection*{${1:${VISUAL:subsubsection name}}}%
-# \label{ssub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
-
-# ${0}
-# endsnippet
 
 # snippet par "Paragraph"
 # \paragraph{${1:${VISUAL:paragraph name}}}%
@@ -362,12 +320,49 @@ ${0}
 endsnippet
 
 
+# Mathematical Procedures
+
+snippet def "Definition" b
+\begin{definition}
+	$0
+\end{definition}
+endsnippet
+
+snippet lem "Lemma" b
+\begin{lemma}
+	$0
+\end{lemma}
+endsnippet
+
+snippet lem "Proposition" b
+\begin{lemma}
+	$0
+\end{lemma}
+endsnippet
+
+snippet theo "Theorem" b
+\begin{theorem}
+	$0
+\end{theorem}
+endsnippet
+
+snippet proof "Proof" b
+\begin{proof}
+	$0
+\end{proof}
+endsnippet
+
+snippet remark "Remark" b
+\begin{remark}
+	$0
+\end{remark}
+endsnippet
+
 snippet ans "Answer Box" b
 \begin{tcolorbox}
 	\textbf{Answer.} $0
 \end{tcolorbox}
 endsnippet
-
 
 # Figures and Tables
 snippet table "Table environment" b
@@ -404,11 +399,15 @@ snippet item "Itemize" bA
 \end{itemize}
 endsnippet
 
-snippet desc "Description" b
-\begin{description}
-	\item[$1] $0
-\end{description}
+snippet it "Individual item" b
+\item $0
 endsnippet
+
+# snippet desc "Description" b
+# \begin{description}
+# 	\item[$1] $0
+# \end{description}
+# endsnippet
 
 
 ######################
