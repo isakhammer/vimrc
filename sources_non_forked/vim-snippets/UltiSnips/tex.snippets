@@ -203,8 +203,6 @@
 
 
 
-# GILLEIA
-
 
 
 global !p
@@ -259,19 +257,18 @@ snippet pac "Package" b
 endsnippet
 
 
-priority 100
-snippet ... "ldots" iA
-\ldots
-endsnippet
-
 ##########################
 #  GENERAL ENVIRONMENTS  #
 ##########################
 
+# Text 
+snippet bold "bold text"
+\textbf{${1}} ${0}
+endsnippet
 
 snippet beg "begin{} / end{}" bA
 \\begin{$1}
-	$0
+	$0 hello
 \\end{$1}
 endsnippet
 
@@ -320,7 +317,7 @@ ${0}
 endsnippet
 
 
-# Mathematical Procedures
+# Mathematically Procedures
 
 snippet def "Definition" b
 \begin{definition}
@@ -551,6 +548,7 @@ snippet bmat "bmat" iA
 \begin{bmatrix} $1 \end{bmatrix} $0
 endsnippet
 
+# Parantheses
 context "math()"
 snippet () "left( right)" iA
 \left( ${1:${VISUAL}} \right) $0
@@ -584,17 +582,81 @@ snippet lra "leftangle rightangle" iA
 \left<${1:${VISUAL}} \right>$0
 endsnippet
 
-context "math()"
-snippet conj "conjugate" iA
-\overline{$1}$0
-endsnippet
 
-snippet sum "sum" w
-\sum_{n=${1:1}}^{${2:\infty}} ${3:a_n z^n}
+# Common definitions
+snippet letw "let omega" iA
+Let $\Omega \subset \C$ be open.
 endsnippet
 
 snippet taylor "taylor" w
 \sum_{${1:k}=${2:0}}^{${3:\infty}} ${4:c_$1} (x-a)^$1 $0
+endsnippet
+
+snippet rij "mrij" i
+(${1:x}_${2:n})_{${3:$2}\\in${4:\\N}}$0
+endsnippet
+
+context "math()"
+snippet xnn "xn" iA
+x_{n}
+endsnippet
+
+context "math()"
+snippet ynn "yn" iA
+y_{n}
+endsnippet
+
+context "math()"
+snippet xii "xi" iA
+x_{i}
+endsnippet
+
+context "math()"
+snippet yii "yi" iA
+y_{i}
+endsnippet
+
+context "math()"
+snippet xjj "xj" iA
+x_{j}
+endsnippet
+
+context "math()"
+snippet yjj "yj" iA
+y_{j}
+endsnippet
+
+context "math()"
+snippet xp1 "x" iA
+x_{n+1}
+endsnippet
+
+context "math()"
+snippet xmm "x" iA
+x_{m}
+endsnippet
+
+snippet R0+ "R0+" iA
+\\R_0^+
+endsnippet
+
+snippet ooo "\infty" iA
+\infty
+endsnippet
+
+priority 100
+snippet ... "ldots" iA
+\ldots
+endsnippet
+
+
+# Operators
+snippet __ "subscript" iA
+_{$1}$0
+endsnippet
+
+snippet sum "sum" w
+\sum_{n=${1:1}}^{${2:\infty}} ${3:a_n z^n}
 endsnippet
 
 snippet lim "limit" w
@@ -638,18 +700,29 @@ snippet rd "to the ... power" iA
 ^{($1)}$0
 endsnippet
 
-snippet __ "subscript" iA
-_{$1}$0
+
+context "math()"
+snippet nabl "nabla" iA
+\nabla
 endsnippet
 
-snippet ooo "\infty" iA
-\infty
+context "math()"
+snippet xx "cross" iA
+\times
 endsnippet
 
-snippet rij "mrij" i
-(${1:x}_${2:n})_{${3:$2}\\in${4:\\N}}$0
+priority 100
+snippet ** "cdot" iA
+\cdot
 endsnippet
 
+context "math()"
+snippet norm "norm" iA
+\|$1\|$0
+endsnippet
+
+
+# Arguments 
 snippet <= "leq" iA
 \le
 endsnippet
@@ -668,51 +741,8 @@ snippet AA "forall" iA
 \forall
 endsnippet
 
-context "math()"
-snippet xnn "xn" iA
-x_{n}
-endsnippet
 
-context "math()"
-snippet ynn "yn" iA
-y_{n}
-endsnippet
-
-
-context "math()"
-snippet xii "xi" iA
-x_{i}
-endsnippet
-
-context "math()"
-snippet yii "yi" iA
-y_{i}
-endsnippet
-
-context "math()"
-snippet xjj "xj" iA
-x_{j}
-endsnippet
-
-context "math()"
-snippet yjj "yj" iA
-y_{j}
-endsnippet
-
-context "math()"
-snippet xp1 "x" iA
-x_{n+1}
-endsnippet
-
-context "math()"
-snippet xmm "x" iA
-x_{m}
-endsnippet
-
-snippet R0+ "R0+" iA
-\\R_0^+
-endsnippet
-
+# Tikz 
 snippet plot "Plot" w
 \begin{figure}[$1]
 	\centering
@@ -744,25 +774,6 @@ snippet lll "l" iA
 \ell
 endsnippet
 
-context "math()"
-snippet nabl "nabla" iA
-\nabla
-endsnippet
-
-context "math()"
-snippet xx "cross" iA
-\times
-endsnippet
-
-priority 100
-snippet ** "cdot" iA
-\cdot
-endsnippet
-
-context "math()"
-snippet norm "norm" iA
-\|$1\|$0
-endsnippet
 
 priority 100
 context "math()"
@@ -801,16 +812,6 @@ snippet !> "mapsto" iA
 endsnippet
 
 context "math()"
-snippet invs "inverse" iA
-^{-1}
-endsnippet
-
-context "math()"
-snippet compl "complement" iA
-^{c}
-endsnippet
-
-context "math()"
 snippet \\\ "setminus" iA
 \setminus
 endsnippet
@@ -829,22 +830,28 @@ snippet ~~ "~" iA
 endsnippet
 
 context "math()"
+snippet invs "inverse" iA
+^{-1}
+endsnippet
+
+context "math()"
+snippet compl "complement" iA
+^{c}
+endsnippet
+
+# Sets
+context "math()"
 snippet set "set" wA
 \\{$1\\} $0
 endsnippet
-
-snippet || "mid" iA
- \mid
-endsnippet
-
 
 context "math()"
 snippet cc "subset" Ai
 \subset
 endsnippet
 
-snippet notin "not in " iA
-\not\in
+snippet OO "emptyset" iA
+\O
 endsnippet
 
 context "math()"
@@ -852,9 +859,15 @@ snippet inn "in " iA
 \in
 endsnippet
 
-snippet NN "n" iA
-\N
+snippet notin "not in " iA
+\not\in
 endsnippet
+
+# Todo: 
+snippet || "mid" iA
+ \mid
+endsnippet
+
 
 snippet Nn "cap" iA
 \cap
@@ -872,26 +885,38 @@ snippet nnn "bigcap" iA
 \bigcap_{${1:i \in ${2: I}}} $0
 endsnippet
 
-snippet OO "emptyset" iA
-\O
+
+# Domains
+snippet NN "n" iA
+\mathbb{N}
 endsnippet
 
 snippet RR "real" iA
-\R
+\mathbb{R}
 endsnippet
 
 snippet QQ "Q" iA
-\Q
+\mathbb{Q}
 endsnippet
 
 snippet ZZ "Z" iA
-\Z
+\mathbb{Z}
 endsnippet
+
+snippet HH "H" iA
+\mathbb{H}
+endsnippet
+
+snippet DD "D" iA
+\mathbb{D}
+endsnippet
+
 
 snippet <! "normal" iA
 \triangleleft
 endsnippet
 
+# Bracket?
 snippet <> "hokje" iA
 \diamond
 endsnippet
@@ -929,6 +954,7 @@ snippet cvec "column vector" iA
 \begin{pmatrix} ${1:x}_${2:1}\\\\ \vdots\\\\ $1_${2:n} \end{pmatrix}
 endsnippet
 
+# Hat Snippets 
 priority 10
 context "math()"
 snippet "bar" "bar" riA
@@ -953,17 +979,10 @@ snippet "([a-zA-Z])hat" "hat" riA
 \hat{`!p snip.rv=match.group(1)`}
 endsnippet
 
-snippet letw "let omega" iA
-Let $\Omega \subset \C$ be open.
-endsnippet
 
-
-snippet HH "H" iA
-\mathbb{H}
-endsnippet
-
-snippet DD "D" iA
-\mathbb{D}
+context "math()"
+snippet conj "conjugate" iA
+\overline{$1}$0
 endsnippet
 
 # vim:ft=snippets
