@@ -307,8 +307,9 @@ snippet ... "ldots" iA
 endsnippet
 
 ##########################
-#  General Environments  #
+#  GENERAL ENVIRONMENTS  #
 ##########################
+
 
 snippet beg "begin{} / end{}" bA
 \\begin{$1}
@@ -316,7 +317,59 @@ snippet beg "begin{} / end{}" bA
 \\end{$1}
 endsnippet
 
+# Sections
+snippet sec "Section"
+\section{${1:${VISUAL:section name}}}%
+\label{sec:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
 
+$0
+endsnippet
+
+snippet sec* "Section"
+\section*{${1:${VISUAL:section name}}}%
+\label{sec:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+
+${0}
+endsnippet
+
+
+snippet sub "Subsection"
+\subsection{${1:${VISUAL:subsection name}}}%
+\label{sub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+
+$0
+endsnippet
+
+snippet sub* "Subsection"
+\subsection*{${1:${VISUAL:subsection name}}}%
+\label{sub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+
+${0}
+endsnippet
+
+snippet ssub "Subsubsection"
+\subsubsection{${1:${VISUAL:subsubsection name}}}%
+\label{ssub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+
+$0
+endsnippet
+
+snippet ssub* "Subsubsection"
+\subsubsection*{${1:${VISUAL:subsubsection name}}}%
+\label{ssub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+
+${0}
+endsnippet
+
+
+snippet ans "Answer Box" b
+\begin{tcolorbox}
+	\textbf{Answer.} $0
+\end{tcolorbox}
+endsnippet
+
+
+# Figures and Tables
 snippet table "Table environment" b
 \begin{table}[${1:htpb}]
 	\centering
@@ -337,6 +390,8 @@ snippet fig "Figure environment" b
 \end{figure}
 endsnippet
 
+
+# Enumeration/Bulletpoints
 snippet enum "Enumerate" bA
 \begin{enumerate}
 	\item $0
@@ -355,11 +410,6 @@ snippet desc "Description" b
 \end{description}
 endsnippet
 
-snippet ans "Answer Box" b
-\begin{tcolorbox}
-	\textbf{Answer.} $0
-\end{tcolorbox}
-endsnippet
 
 ######################
 #  Math Environment  #
