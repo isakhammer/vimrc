@@ -430,8 +430,19 @@ endsnippet
 
 snippet dm "Math" wA
 \[
-${1:${VISUAL}}
-.\] $0
+${2:${VISUAL}}$1
+\] $0
+endsnippet
+
+snippet eqref "equation ref" wA
+\eqref{eq:${1:label}} $0
+endsnippet
+
+snippet eq "equation" bA
+\begin{equation}
+\label{eq:${1:label}}
+	${0:${VISUAL}}
+.\end{equation}
 endsnippet
 
 snippet ali "Align" bA
@@ -949,6 +960,14 @@ snippet DD "D" iA
 \mathbb{D}
 endsnippet
 
+snippet eps "epsilon" iA
+\epsilon
+endsnippet
+
+snippet del "delta" iA
+\delta
+endsnippet
+
 
 # Other
 snippet <! "normal" iA
@@ -1018,5 +1037,4 @@ snippet conj "conjugate" iA
 endsnippet
 
 # vim:ft=snippets
-
 
