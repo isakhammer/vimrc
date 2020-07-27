@@ -282,6 +282,7 @@ endsnippet
 
 # Sections
 snippet sec "Section"
+\newpage
 \section{${1:${VISUAL:section name}}}%
 \label{sec:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
 
@@ -289,6 +290,7 @@ $0
 endsnippet
 
 snippet sec* "Section"
+\newpage
 \section*{${1:${VISUAL:section name}}}%
 \label{sec:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
 
@@ -339,19 +341,19 @@ snippet defn "Definition" b
 \end{definition}
 endsnippet
 
-snippet lem "Lemma" b
+snippet lemma "Lemma" b
 \begin{lemma}
 	$0
 \end{lemma}
 endsnippet
 
-snippet prop "Proposition" b
+snippet proposition "Proposition" b
 \begin{proposition}
 	$0
 \end{proposition}
 endsnippet
 
-snippet theo "Theorem" b
+snippet theorem "Theorem" b
 \begin{theorem}
 	$0
 \end{theorem}
@@ -369,7 +371,7 @@ snippet remark "Remark" b
 \end{remark}
 endsnippet
 
-snippet ans "Answer Box" b
+snippet answer "Answer Box" b
 \begin{tcolorbox}
 	\textbf{Answer.} $0
 \end{tcolorbox}
@@ -404,7 +406,6 @@ snippet enumi "Enumerate" bA
 \end{enumerate}
 endsnippet
 
-# Enumeration/Bulletpoints
 snippet enumn "Enumerate" bA
 \begin{enumerate}
 	\item $0
@@ -427,6 +428,9 @@ snippet desc "Description" b
 \end{description}
 endsnippet
 
+snippet par "Paragraph" b
+	\par
+endsnippet
 
 ######################
 #  Math Environment  #
@@ -460,7 +464,7 @@ endsnippet
 
 snippet ali "Align" bA
 \begin{align*}
-	${1:${VISUAL}}
+	${1:${VISUAL}} &= $0
 .\end{align*}
 endsnippet
 

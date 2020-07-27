@@ -83,7 +83,7 @@ nnoremap <localleader>lca :VimtexStop<cr>:VimtexClean!<cr>
 " Autosave
 au BufRead,BufNewFile *.tex :call EnableAutoSave()
 
-" incscape-figures plugin
+" incscape-figures plug-in
 inoremap <localleader>f <Esc>: silent exec '.!inkscape-figures create "'.getline('.').'" "'.b:vimtex.root.'/figures/"'<CR><CR>:w<CR>
 nnoremap <localleader>f : silent exec '!inkscape-figures edit "'.b:vimtex.root.'/figures/" > /dev/null 2>&1 &'<CR><CR>:redraw!<CR>
 
