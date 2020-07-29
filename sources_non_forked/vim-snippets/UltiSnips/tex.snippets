@@ -95,6 +95,9 @@
 
 
 
+################
+#  Math Zones  #
+################
 
 global !p
 texMathZones = ['texMathZone' + x for x in ['A', 'AS', 'B', 'BS', 'C', 'CS', 'D', 'DS', 'E', 'ES', 'F', 'FS', 'G', 'GS', 'H', 'HS', 'I', 'IS', 'J', 'JS', 'K', 'KS', 'L', 'LS', 'DS', 'V', 'W', 'X', 'Y', 'Z', 'AmsA', 'AmsB', 'AmsC', 'AmsD', 'AmsE', 'AmsF', 'AmsG', 'AmsAS', 'AmsBS', 'AmsCS', 'AmsDS', 'AmsES', 'AmsFS', 'AmsGS' ]]
@@ -143,13 +146,6 @@ snippet template "Basic template" b
 	$0
 \end{document}
 endsnippet
-
-
-
-
-
-
-
 
 snippet pac "Package" b
 \usepackage[${1:options}]{${2:package}}$0
@@ -222,7 +218,10 @@ ${0}
 endsnippet
 
 
-# Mathematically Procedures
+###################
+#  Math Sections  #
+###################
+
 snippet deff "Definition" b
 \begin{definition}
 	$0
@@ -385,10 +384,16 @@ snippet eq "equation" bA
 .\end{equation}
 endsnippet
 
-snippet ali "Align" bA
+snippet ali* "Align" bA
 \begin{align*}
 	${1:${VISUAL}} &= $0
 .\end{align*}
+endsnippet
+
+snippet ali "Align" bA
+\begin{align}
+	${1:${VISUAL}} &= $0
+.\end{align}
 endsnippet
 
 ########################
@@ -1019,7 +1024,6 @@ context "math()"
 snippet "([a-zA-Z])hat" "hat" riA
 \hat{`!p snip.rv=match.group(1)`}
 endsnippet
-
 
 context "math()"
 snippet conj "conjugate" iA
