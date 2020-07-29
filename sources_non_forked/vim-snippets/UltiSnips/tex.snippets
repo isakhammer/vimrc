@@ -509,7 +509,7 @@ snippet lr "left( right)" i
 \left( ${1:${VISUAL}} \right)$0
 endsnippet
 
-snippet lr( "left( right)" i
+snippet lrp "left( right)" i
 \left( ${1:${VISUAL}} \right)$0
 endsnippet
 
@@ -517,16 +517,16 @@ snippet lr| "left| right|" i
 \left| ${1:${VISUAL}} \right|$0
 endsnippet
 
-snippet lr{ "left\{ right\}" i
-\left\\{ ${1:${VISUAL}} \right\\}$0
-endsnippet
+# snippet lr{ "left\{ right\}" i
+# \left\\{ ${1:${VISUAL}} \right\\}$0
+# endsnippet
 
-snippet lrb "left\{ right\}" i
-\left\\{ ${1:${VISUAL}} \right\\}$0
-endsnippet
-
-snippet lr[ "left[ right]" i
+snippet lrb "left[ right]" i
 \left[ ${1:${VISUAL}} \right]$0
+endsnippet
+
+snippet lrB "left\{ right\}" i
+\left\\{ ${1:${VISUAL}} \right\\}$0
 endsnippet
 
 snippet lra "leftangle rightangle" iA
@@ -813,7 +813,7 @@ endsnippet
 
 priority 200
 context "math()"
-snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta|int)' "ln" rwA
+snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta)' "ln" rwA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
