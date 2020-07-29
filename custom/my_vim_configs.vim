@@ -18,21 +18,20 @@ set expandtab
 
 
 
-" Source vim 
+" GENERAL VIM SETTINGs
+" Source vimrc
 nmap <leader>so :source $MYVIMRC
 
 nmap <F12> :let $MYFILE=expand('%')<CR>:terminal<CR>echo $MYFILE<CR>
+
+" Change size when having multiple windows
 nnoremap <F9> 6<C-w>> 
 nnoremap <F10> 6<C-w>< 
 
+" Folding color
+highlight Folded ctermbg=black
 
 
-"set cursorline
-"set cursorcolumn
-"highlight CursorLine cterm=bold ctermbg=Yellow guibg=#2b2b2b
-"highlight CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-
-"highlight CursorLine xtermbg=Yellow cterm=bold guibg=#2b
 
 """"""""""""""""""""""""""""""
 " => Airline Plugin
@@ -115,4 +114,3 @@ hi Conceal ctermbg=none
 setlocal spell
 set spelllang=en_gb
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
-"colorscheme desert
