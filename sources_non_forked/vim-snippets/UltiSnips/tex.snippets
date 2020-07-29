@@ -499,26 +499,6 @@ snippet floor "floor" iA
 \left\lfloor $1 \right\rfloor$0
 endsnippet
 
-snippet pmat "pmat" iA
-\begin{pmatrix}
-$1
-\end{pmatrix} $0
-endsnippet
-
-snippet bmat "bmat" iA
-\begin{bmatrix} 
-$1
-\end{bmatrix} $0
-endsnippet
-
-snippet ii "column" iA
- & $0
-endsnippet
-
-snippet jj "row" iA
-\\\
-endsnippet
-
 # Parantheses
 context "math()"
 # snippet () "left( right)" iA
@@ -755,6 +735,36 @@ snippet tt "text" iA
 \text{$1}$0
 endsnippet
 
+######################
+#  Matrix Alignment  #
+######################
+
+snippet pmat "pmat" iA
+\begin{pmatrix}
+$1
+\end{pmatrix} $0
+endsnippet
+
+snippet bmat "bmat" iA
+\begin{bmatrix} 
+$1
+\end{bmatrix} $0
+endsnippet
+
+snippet cvec "column vector" iA
+\begin{pmatrix} ${1:x}_${2:1}\\\\ \vdots\\\\ $1_${2:n} \end{pmatrix}
+endsnippet
+
+context "math()"
+snippet ii "column" iA
+ & $0
+endsnippet
+
+context "math()"
+snippet jj "row" iA
+\\\
+endsnippet
+
 
 # Tikz 
 snippet plot "Plot" w
@@ -984,9 +994,6 @@ snippet bigfun "Big function" iA
 .\end{align*}
 endsnippet
 
-snippet cvec "column vector" iA
-\begin{pmatrix} ${1:x}_${2:1}\\\\ \vdots\\\\ $1_${2:n} \end{pmatrix}
-endsnippet
 
 # Hat Snippets 
 priority 10
