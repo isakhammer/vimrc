@@ -44,18 +44,6 @@
 
 # endglobal
 
-# snippet "b(egin)?" "begin{} / end{}" br
-# \begin{${1:something}}
-# 	${0:${VISUAL}}
-# \end{$1}
-# endsnippet
-
-# snippet abs "abstract environment" b
-# \begin{abstract}
-# 	$0
-# \end{abstract}
-# endsnippet
-
 # snippet tab "tabular / array environment" b
 # \begin{${1:t}${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}{${2:c}}
 # $0${2/(?<=.)(c|l|r)|./(?1: & )/g}
@@ -90,28 +78,6 @@
 # \end{figure}
 # endsnippet
 
-# snippet enum "Enumerate" b
-# \begin{enumerate}
-# 	\item $0
-# \end{enumerate}
-# endsnippet
-
-# snippet item "Itemize" b
-# \begin{itemize}
-# 	\item $0
-# \end{itemize}
-# endsnippet
-
-# snippet desc "Description" b
-# \begin{description}
-# 	\item[$1] $0
-# \end{description}
-# endsnippet
-
-# snippet it "Individual item" b
-# \item $0
-# endsnippet
-
 # snippet part "Part" b
 # \part{${1:part name}}%
 # \label{prt:${2:${1/(\w+)|\W+/(?1:\L$0\E:_)/ga}}}
@@ -119,87 +85,12 @@
 # $0
 # endsnippet
 
-# snippet cha "Chapter" b
-# \chapter{${1:chapter name}}%
-# \label{cha:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
-
-# $0
-# endsnippet
-
-
 # snippet par "Paragraph"
 # \paragraph{${1:${VISUAL:paragraph name}}}%
 # \label{par:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
 
 # $0
 # endsnippet
-
-# snippet subp "Subparagraph"
-# \subparagraph{${1:${VISUAL:subparagraph name}}}%
-# \label{par:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
-
-# $0
-# endsnippet
-
-# snippet ac "Acroynm normal" b
-# \ac{${1:acronym}}
-# $0
-# endsnippet
-
-# snippet acl "Acroynm expanded" b
-# \acl{${1:acronym}}
-# $0
-# endsnippet
-
-
-
-# snippet ni "Non-indented paragraph" b
-# \noindent
-# $0
-# endsnippet
-
-# snippet pac "Package" b
-# \usepackage`!p snip.rv='[' if t[1] else ""`${1:options}`!p snip.rv = ']' if t[1] else ""`{${2:package}}$0
-# endsnippet
-
-# snippet lp "Long parenthesis"
-# \left(${1:${VISUAL:contents}}\right)$0
-# endsnippet
-
-# snippet "mint(ed)?( (\S+))?" "Minted code typeset" br
-# \begin{listing}
-# \begin{minted}[linenos,numbersep=5pt,frame=lines,framesep=2mm]{${1:`!p
-# snip.rv = match.group(3) if match.group(2) is not None else "language"`}}
-# ${2:${VISUAL:code}}
-# \end{minted}
-# \caption{${3:caption name}}
-# \label{lst:${4:${3/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
-# \end{listing}
-
-# $0
-# endsnippet
-
-# snippet gln "New glossary item" b
-# \newglossaryentry{${1:identifier}}
-# {
-#   name={${2:name}},
-#   first={${3:first occurrence}},
-#   sort={${4:sort value}},
-#   description={${0:description}},
-# }
-# endsnippet
-# snippet glnl "New long glossary item" b
-# \longnewglossaryentry{${1:identifier}}
-# {
-#   name={${2:name}},
-#   first={${3:first occurrence}},
-#   sort={${4:sort value}},
-# }
-# {
-#   ${0:description}
-# }
-# endsnippet
-# # vim:ft=snippets:
 
 
 
