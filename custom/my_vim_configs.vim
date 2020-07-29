@@ -93,21 +93,26 @@ let g:vimtex_quickfix_mode=0
 
 
 """"""""""""""""""""""""""""""
-" => Ultisnips plugin
+" => Multi snips plug-in
 """""""""""""""""""""""""""""""
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
-let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
+let g:UltiSnipsJumpBackwardTrigger='<C-tab>'
 
 """"""""""""""""""""""""""""""
-" => Tex Conceal Plugin
+" => Tex Conceal Plug-in
 "
 """""""""""""""""""""""""""""""
 set conceallevel=1
 let g:tex_conceal='abdmg'
 hi Conceal ctermbg=none
+"let g:tex_conceal_frac=1
 
 
 
 
+" Spelling correction when pressing ctrl L
+setlocal spell
+set spelllang=en_gb
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 "colorscheme desert
