@@ -219,21 +219,26 @@ endsnippet
 
 
 # Mathematically Procedures
-
-snippet def "Definition" b
+snippet deff "Definition" b
 \begin{definition}
 	$0
 \end{definition}
 endsnippet
 
-snippet defn "Definition" b
+snippet defF "Definition" b
 \begin{definition}[${1:name}]
 	$0
 \end{definition}
 endsnippet
 
-snippet lemma "Lemma" b
+snippet lemmaa "Lemma" b
 \begin{lemma}
+	$0
+\end{lemma}
+endsnippet
+
+snippet lemmaA "Lemma" b
+\begin{lemma}[${1:name}]
 	$0
 \end{lemma}
 endsnippet
@@ -244,23 +249,42 @@ snippet proposition "Proposition" b
 \end{proposition}
 endsnippet
 
-snippet theorem "Theorem" b
+snippet theoremM "Theorem" b
+\begin{theorem}[${1:name}]
+	$0
+\end{theorem}
+endsnippet
+
+snippet theoremm "Theorem" b
 \begin{theorem}
 	$0
 \end{theorem}
 endsnippet
 
-snippet proof "Proof" b
+snippet proofF "Proof" b
+\begin{proof}[${1:name}]
+	$0
+\end{proof}
+endsnippet
+
+snippet prooff "Proof" b
 \begin{proof}
 	$0
 \end{proof}
 endsnippet
 
-snippet remark "Remark" b
+snippet remarkk "Remark" b
 \begin{remark}
 	$0
 \end{remark}
 endsnippet
+
+snippet remarkK "Remark" b
+\begin{remark}[${1:name}]
+	$0
+\end{remark}
+endsnippet
+
 
 snippet answer "Answer Box" b
 \begin{tcolorbox}
@@ -290,27 +314,31 @@ snippet fig "Figure environment" b
 endsnippet
 
 
-# Enumeration/Bulletpoints
-snippet enumi "Enumerate" bA
-\begin{enumerate}[(i)]
-	\item $0
-\end{enumerate}
-endsnippet
-
-snippet enumn "Enumerate" bA
+# Enumeration
+snippet enumm "Enumerate" bA
 \begin{enumerate}
 	\item $0
 \end{enumerate}
 endsnippet
 
-snippet item "Itemize" bA
+snippet enumM "Enum with type" bA
+\begin{enumerate}
+	\item[$1] $0
+\end{enumerate}
+endsnippet
+
+snippet itT "item with type" b
+\item[$1] $0
+endsnippet
+
+snippet itt "Individual item" b
+\item $0
+endsnippet
+
+snippet itemize "Itemize" bA
 \begin{itemize}
 	\item $0
 \end{itemize}
-endsnippet
-
-snippet it "Individual item" b
-\item $0
 endsnippet
 
 snippet desc "Description" b
@@ -320,7 +348,7 @@ snippet desc "Description" b
 endsnippet
 
 snippet par "Paragraph" b
-	\par
+\par
 endsnippet
 
 ######################
@@ -468,41 +496,53 @@ snippet floor "floor" iA
 endsnippet
 
 snippet pmat "pmat" iA
-\begin{pmatrix} $1 \end{pmatrix} $0
+\begin{pmatrix}
+$1
+\end{pmatrix} $0
 endsnippet
 
 snippet bmat "bmat" iA
-\begin{bmatrix} $1 \end{bmatrix} $0
+\begin{bmatrix} 
+$1
+\end{bmatrix} $0
+endsnippet
+
+snippet ii "column" iA
+ & $0
+endsnippet
+
+snippet jj "row" iA
+\\\
 endsnippet
 
 # Parantheses
 context "math()"
-snippet () "left( right)" iA
-\left( ${1:${VISUAL}} \right) $0
-endsnippet
+# snippet () "left( right)" iA
+# \left( ${1:${VISUAL}} \right)$0
+# endsnippet
 
 snippet lr "left( right)" i
-\left( ${1:${VISUAL}} \right) $0
+\left( ${1:${VISUAL}} \right)$0
 endsnippet
 
 snippet lr( "left( right)" i
-\left( ${1:${VISUAL}} \right) $0
+\left( ${1:${VISUAL}} \right)$0
 endsnippet
 
 snippet lr| "left| right|" i
-\left| ${1:${VISUAL}} \right| $0
+\left| ${1:${VISUAL}} \right|$0
 endsnippet
 
 snippet lr{ "left\{ right\}" i
-\left\\{ ${1:${VISUAL}} \right\\} $0
+\left\\{ ${1:${VISUAL}} \right\\}$0
 endsnippet
 
 snippet lrb "left\{ right\}" i
-\left\\{ ${1:${VISUAL}} \right\\} $0
+\left\\{ ${1:${VISUAL}} \right\\}$0
 endsnippet
 
 snippet lr[ "left[ right]" i
-\left[ ${1:${VISUAL}} \right] $0
+\left[ ${1:${VISUAL}} \right]$0
 endsnippet
 
 snippet lra "leftangle rightangle" iA
@@ -561,6 +601,16 @@ endsnippet
 context "math()"
 snippet yjj "yj" iA
 y_{j}
+endsnippet
+
+context "math()"
+snippet xkk "xk" iA
+x_{k}
+endsnippet
+
+context "math()"
+snippet ykk "yk" iA
+y_{k}
 endsnippet
 
 context "math()"
@@ -651,11 +701,6 @@ endsnippet
 
 
 context "math()"
-snippet nabl "nabla" iA
-\nabla
-endsnippet
-
-context "math()"
 snippet xx "cross" iA
 \times
 endsnippet
@@ -668,6 +713,11 @@ endsnippet
 context "math()"
 snippet norm "norm" iA
 \|$1\|$0
+endsnippet
+
+context "math()"
+snippet abs "abs" iA
+\left\lvert $1 \right\rvert $0
 endsnippet
 
 
@@ -693,12 +743,7 @@ endsnippet
 
 context "math()"
 snippet qu "spacing" iA
-\quad $1 \quad $0 
-endsnippet
-
-context "math()"
-snippet s.t. "such that" iA
-\textrm{s.t.}
+\quad $1 
 endsnippet
 
 context "math()"
@@ -725,7 +770,7 @@ snippet plot "Plot" w
 \end{figure}
 endsnippet
 
-snippet nn "Tikz node" w
+snippet tikzNode "Tikz node" w
 \node[$5] (${1/[^0-9a-zA-Z]//g}${2}) ${3:at (${4:0,0}) }{$${1}$};
 $0
 endsnippet
@@ -876,6 +921,15 @@ snippet DD "D" iA
 \mathbb{D}
 endsnippet
 
+snippet CC "C" iA
+\mathbb{C}
+endsnippet
+
+context "math()"
+snippet nabl "nabla" iA
+\nabla
+endsnippet
+
 snippet eps "epsilon" iA
 \epsilon
 endsnippet
@@ -887,6 +941,11 @@ endsnippet
 snippet delta "delta" iA
 \delta
 endsnippet
+
+snippet psi "psi" iA
+\psi
+endsnippet
+
 
 
 # Other
