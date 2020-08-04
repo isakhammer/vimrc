@@ -24,6 +24,24 @@ nmap <leader>so :source $MYVIMRC
 
 nmap <F12> :let $MYFILE=expand('%')<CR>:terminal<CR>echo $MYFILE<CR>
 
+""""""""""""""""""""""""""
+"  Insert Mode Mappings  "
+""""""""""""""""""""""""""
+"II go to just before the first non-blank text of the line
+"AA go to the end of the line
+"OO start editing on a new line above the current line
+"CC change what is on the right of the cursor
+"SS change the whole line
+"DD delete the current line (end in normal mode)
+"UU undo
+" inoremap <leader>II <Esc>I
+" inoremap <leader>AA <Esc>A
+" inoremap <leader>OO <Esc>O
+" inoremap <leader>CC <Esc>C
+" inoremap <leader>SS <Esc>S
+" inoremap <leader>DD <Esc>dd
+" inoremap <leader>UU <Esc>u
+
 " Change size when having multiple windows
 nnoremap <F9> 6<C-w>> 
 nnoremap <F10> 6<C-w>< 
@@ -72,7 +90,7 @@ let maplocalleader = "\\"
 let g:Tex_DefaultTargetFormat='pdf'
 let g:vimtex_view_enabled=1
 let g:vimtex_view_automatic=1
-let g:vimtex_view_general_viewer = 'zathura'
+"let g:vimtex_view_general_viewer = 'zathura'
 let g:vimtex_view_method='zathura'
 "
 " Clean directory of generated files
