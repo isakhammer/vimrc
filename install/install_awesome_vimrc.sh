@@ -1,6 +1,10 @@
 #!/bin/sh
 set -e
 sudo apt install vim
+
+# Changing escape key and capslock.
+setxkbmap -option caps:swapescape
+
 touch ~/.vimrc
 
 cd ~/.vim_runtime
