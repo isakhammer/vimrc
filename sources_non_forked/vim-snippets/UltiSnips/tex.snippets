@@ -270,27 +270,27 @@ endsnippet
 # Enumeration
 snippet enumm "Enumerate" bA
 \begin{enumerate}
-	\item $0
+	\item$0
 \end{enumerate}
 endsnippet
 
-snippet enumM "Enum with type" bA
-\begin{enumerate}
-	\item[$1] $0
-\end{enumerate}
-endsnippet
+# snippet enumM "Enum with type" bA
+# \begin{enumerate}
+# 	\item[$1] $0
+# \end{enumerate}
+# endsnippet
 
-snippet itT "item with type" b
-\item[$1] $0
-endsnippet
+# snippet itT "item with type" b
+# \item[$1] $0
+# endsnippet
 
-snippet itt "Individual item" b
-\item $0
-endsnippet
+# snippet itt "Individual item" b
+# \item $0
+# endsnippet
 
-snippet itemize "Itemize" bA
+snippet itemizee "Itemize" bA
 \begin{itemize}
-	\item $0
+	\item$0
 \end{itemize}
 endsnippet
 
@@ -300,9 +300,9 @@ snippet desc "Description" b
 \end{description}
 endsnippet
 
-snippet par "Paragraph" b
-\par
-endsnippet
+# snippet par "Paragraph" b
+# \par
+# endsnippet
 
 ######################
 #  Math Environment  #
@@ -597,7 +597,7 @@ snippet sup "sup" w
 \sup_{${1}} $0
 endsnippet
 
-snippet substack "substack" w
+snippet sstack "substack" w
 \substack{${1}} $0
 endsnippet
 
@@ -703,18 +703,21 @@ endsnippet
 #  Matrix Alignment  #
 ######################
 
+context "math()"
 snippet pmat "pmat" iA
 \begin{pmatrix}
 $1
 \end{pmatrix} $0
 endsnippet
 
+context "math()"
 snippet bmat "bmat" iA
 \begin{bmatrix} 
 $1
 \end{bmatrix} $0
 endsnippet
 
+context "math()"
 snippet cvec "column vector" iA
 \begin{pmatrix} ${1:x}_${2:1}\\\\ \vdots\\\\ $1_${2:n} \end{pmatrix}
 endsnippet
@@ -901,35 +904,35 @@ snippet CC "C" iA
 \mathbb{C}
 endsnippet
 
-context "math()"
-snippet nabla "nabla" iA
-\nabla $0
-endsnippet
-
-context "math()"
-snippet eps "epsilon" iA
-\epsilon $0
-endsnippet
-
-context "math()"
-snippet alpha "alpha" iA
-\alpha $0
-endsnippet
-
-context "math()"
-snippet delta "delta" iA
-\delta $0
-endsnippet
-
-context "math()"
-snippet psi "psi" iA
-\psi $0
-endsnippet
-
-context "math()"
-snippet lll "fancy l" iA
-\ell $0
-endsnippet
+#context "math()"
+#snippet nabla "nabla" iA
+#\nabla $0
+#endsnippet
+#
+#context "math()"
+#snippet eps "epsilon" iA
+#\epsilon $0
+#endsnippet
+#
+#context "math()"
+#snippet alpha "alpha" iA
+#\alpha $0
+#endsnippet
+#
+#context "math()"
+#snippet delta "delta" iA
+#\delta $0
+#endsnippet
+#
+#context "math()"
+#snippet psi "psi" iA
+#\psi $0
+#endsnippet
+#
+#context "math()"
+#snippet lll "fancy l" iA
+#\ell $0
+#endsnippet
 
 
 # Other
@@ -980,6 +983,12 @@ endsnippet
 
 priority 10
 context "math()"
+snippet conj "conjugate" iA
+\overline{$1}$0
+endsnippet
+
+priority 10
+context "math()"
 snippet "hat" "hat" riA
 \hat{$1}$0
 endsnippet
@@ -990,9 +999,11 @@ snippet "([a-zA-Z])hat" "hat" riA
 \hat{`!p snip.rv=match.group(1)`}
 endsnippet
 
+
+priority 10
 context "math()"
-snippet conj "conjugate" iA
-\overline{$1}$0
+snippet "mbf" "bold math" riA
+\mathbf{$1}$0
 endsnippet
 
 # vim:ft=snippets
