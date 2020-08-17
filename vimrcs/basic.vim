@@ -258,8 +258,8 @@ endtry
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 
-""""""""""""""""""""""""""""""
-" => Status line
+
+
 """"""""""""""""""""""""""""""
 " Always show the status line
 set laststatus=2
