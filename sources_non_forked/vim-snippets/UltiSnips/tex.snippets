@@ -544,6 +544,36 @@ y_{n}
 endsnippet
 
 context "math()"
+snippet x00 "x0" iA
+x_{0}
+endsnippet
+
+context "math()"
+snippet x11 "x1" iA
+x_{1}
+endsnippet
+
+context "math()"
+snippet x22 "x1" iA
+x_{1}
+endsnippet
+
+context "math()"
+snippet y00 "x0" iA
+x_{0}
+endsnippet
+
+context "math()"
+snippet y11 "x1" iA
+y_{1}
+endsnippet
+
+context "math()"
+snippet y22 "x1" iA
+y_{1}
+endsnippet
+
+context "math()"
 snippet xii "xi" iA
 x_{i}
 endsnippet
@@ -967,6 +997,11 @@ snippet CC "C" iA
 endsnippet
 
 context "math()"
+snippet Eps "epsilon" iA
+\epsilon
+endsnippet
+
+context "math()"
 snippet lll "fancy l" iA
 \ell $0
 endsnippet
@@ -1029,6 +1064,19 @@ snippet "hat" "hat" riA
 \hat{$1}$0
 endsnippet
 
+priority 10
+context "math()"
+snippet "dot" "dot" riA
+\dot{$1}$0
+endsnippet
+
+priority 10
+context "math()"
+snippet "Dot" "ddot" riA
+\ddot{$1}$0
+endsnippet
+
+
 priority 100
 context "math()"
 snippet "([a-zA-Z])hat" "hat" riA
@@ -1040,6 +1088,8 @@ context "math()"
 snippet "mb" "bold math" riA
 \mathbf{$1}$0
 endsnippet
+
+
 
 # vim:ft=snippets
 
