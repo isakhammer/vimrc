@@ -95,7 +95,7 @@ endsnippet
 ##########################
 
 # Text 
-snippet bold "bold text"
+snippet bd "bold text"
 \textbf{${1}} ${0}
 endsnippet
 
@@ -296,7 +296,7 @@ endsnippet
 # \item $0
 # endsnippet
 
-snippet itemizee "Itemize" bA
+snippet itzz "Itemize" bA
 \begin{itemize}
 	\item$0
 \end{itemize}
@@ -482,6 +482,11 @@ snippet -= "approx" iA
 endsnippet
 
 context "math()"
+snippet +- "pm" iA
+\pm
+endsnippet
+
+context "math()"
 snippet ceil "ceil" i
 \left\lceil $1 \right\rceil $0
 endsnippet
@@ -643,10 +648,12 @@ endsnippet
 #  å mappings  #
 ################
 
+context "math()"
 snippet Å "subscript" iA
 ^{$1}$0
 endsnippet
 
+context "math()"
 snippet å "subscript" iA
 _{$1}$0
 endsnippet
@@ -769,7 +776,7 @@ snippet prod "product" w
 endsnippet
 
 snippet part "d/dx" w
-\frac{\partial ${1:V}}{\partial ${2:x}} $0
+\frac{\partial ${1}}{\partial ${2:x}} $0
 endsnippet
 
 snippet dell "dx" w
@@ -783,7 +790,7 @@ endsnippet
 
 
 context "math()"
-snippet xx "cross" iA
+snippet XX "cross" iA
 \times $0 
 endsnippet
 
@@ -829,7 +836,7 @@ snippet qu "spacing" iA
 endsnippet
 
 context "math()"
-snippet tt "text" iA
+snippet tx "text" iA
 \text{$1}$0
 endsnippet
 
@@ -1074,6 +1081,15 @@ endsnippet
 #  ø-mappings  #
 ################
 
+context "math()"
+snippet øn "nabla" iA
+\nabla $0
+endsnippet
+
+context "math()"
+snippet øN "Nabla" iA
+\Nabla $0
+endsnippet
 
 context "math()"
 snippet øe "epsilon" iA
