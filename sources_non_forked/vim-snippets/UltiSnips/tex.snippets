@@ -639,45 +639,16 @@ snippet ... "ldots" iA
 \ldots
 endsnippet
 
-# Operators
-snippet -- "subscript" iA
+################
+#  å mappings  #
+################
+
+snippet Å "subscript" iA
+^{$1}$0
+endsnippet
+
+snippet å "subscript" iA
 _{$1}$0
-endsnippet
-
-snippet sum "sum" w
-\sum_{${1:i}=${2:1}}^{${3:\infty}} ${0}
-endsnippet
-
-snippet lim "limit" w
-\lim_{${1:n} \to ${2:\infty}}
-endsnippet
-
-snippet sup "sup" w
-\sup_{${1}} $0
-endsnippet
-
-snippet sstack "substack" w
-\substack{${1}} $0
-endsnippet
-
-snippet limsup "limsup" w
-\limsup_{${1:n} \to ${2:\infty}}
-endsnippet
-
-snippet prod "product" w
-\prod_{${1:n=${2:1}}}^{${3:\infty}} ${4:${VISUAL}} $0
-endsnippet
-
-snippet part "d/dx" w
-\frac{\partial ${1:V}}{\partial ${2:x}} $0
-endsnippet
-
-snippet dell "dx" w
-\partial $0
-endsnippet
-
-snippet der "d/dx" w
-\frac{d ${1:V}}{d ${2:x}} $0
 endsnippet
 
 context "math()"
@@ -719,6 +690,97 @@ context "math()"
 snippet compl "complement" iA
 ^{c}
 endsnippet
+
+priority 10
+context "math()"
+snippet "bar" "bar" riA
+\overline{$1}$0
+endsnippet
+
+priority 100
+context "math()"
+snippet "([a-zA-Z])bar" "bar" riA
+\overline{`!p snip.rv=match.group(1)`}
+endsnippet
+
+priority 10
+context "math()"
+snippet conj "conjugate" iA
+\overline{$1}$0
+endsnippet
+
+priority 10
+context "math()"
+snippet "dot" "dot" riA
+\dot{$1}$0
+endsnippet
+
+priority 10
+context "math()"
+snippet "Dot" "ddot" riA
+\ddot{$1}$0
+endsnippet
+
+priority 10
+context "math()"
+snippet "hat" "hat" riA
+\hat{$1}$0
+endsnippet
+
+priority 100
+context "math()"
+snippet "([a-zA-Z])hat" "hat" riA
+\hat{`!p snip.rv=match.group(1)`}
+endsnippet
+
+priority 10
+context "math()"
+snippet "mb" "bold math" riA
+\mathbf{$1}$0
+endsnippet
+
+
+###############
+#  operators  #
+###############
+
+snippet sum "sum" w
+\sum_{${1:i}=${2:1}}^{${3:\infty}} ${0}
+endsnippet
+
+snippet lim "limit" w
+\lim_{${1:n} \to ${2:\infty}}
+endsnippet
+
+snippet sup "sup" w
+\sup_{${1}} $0
+endsnippet
+
+snippet sstack "substack" w
+\substack{${1}} $0
+endsnippet
+
+snippet limsup "limsup" w
+\limsup_{${1:n} \to ${2:\infty}}
+endsnippet
+
+snippet prod "product" w
+\prod_{${1:n=${2:1}}}^{${3:\infty}} ${4:${VISUAL}} $0
+endsnippet
+
+snippet part "d/dx" w
+\frac{\partial ${1:V}}{\partial ${2:x}} $0
+endsnippet
+
+snippet dell "dx" w
+\partial $0
+endsnippet
+
+snippet der "d/dx" w
+\frac{d ${1:V}}{d ${2:x}} $0
+endsnippet
+
+
 
 context "math()"
 snippet xx "cross" iA
@@ -915,7 +977,6 @@ snippet << "<<" iA
 \ll
 endsnippet
 
-
 snippet ~~ "~" iA
 \sim
 endsnippet
@@ -929,6 +990,11 @@ endsnippet
 context "math()"
 snippet cc "subset" Ai
 \subset
+endsnippet
+
+context "math()"
+snippet cq "subset" Ai
+\subseteq 
 endsnippet
 
 snippet OO "emptyset" iA
@@ -953,7 +1019,7 @@ snippet Nn "cap" iA
 endsnippet
 
 snippet UU "cup" iA
-\cup
+\cup 
 endsnippet
 
 snippet uuu "bigcup" iA
@@ -965,48 +1031,103 @@ snippet nnn "bigcap" iA
 endsnippet
 
 
-############
-#  Naming  #
-############
+#############
+#  Symbols  #
+#############
 
 context "math()"
 snippet NN "n" iA
-\mathbb{N}
+\mathbb{N} $0
 endsnippet
 
 context "math()"
 snippet RR "real" iA
-\mathbb{R}
+\mathbb{R} $0
 endsnippet
 
 context "math()"
 snippet QQ "Q" iA
-\mathbb{Q}
+\mathbb{Q} $0
 endsnippet
 
 context "math()"
 snippet ZZ "Z" iA
-\mathbb{Z}
+\mathbb{Z} $0
 endsnippet
 
 context "math()"
 snippet HH "H" iA
-\mathbb{H}
+\mathbb{H} $0
 endsnippet
 
 context "math()"
 snippet DD "D" iA
-\mathbb{D}
+\mathbb{D} $0
 endsnippet
 
 context "math()"
 snippet CC "C" iA
-\mathbb{C}
+\mathbb{C} $0
+endsnippet
+
+################
+#  ø-mappings  #
+################
+
+
+context "math()"
+snippet øe "epsilon" iA
+\epsilon $0
 endsnippet
 
 context "math()"
-snippet Eps "epsilon" iA
-\epsilon
+snippet øE "epsilon" iA
+\epsilon $0
+endsnippet
+
+context "math()"
+snippet øa "alpha" iA
+\alpha $0
+endsnippet
+
+context "math()"
+snippet øA "alpha" iA
+\alpha $0
+endsnippet
+
+context "math()"
+snippet øo "omega" iA
+\omega $0
+endsnippet
+
+context "math()"
+snippet øO "omega" iA
+\Omega $0
+endsnippet
+
+context "math()"
+snippet ød "delta" iA
+\delta $0
+endsnippet
+
+context "math()"
+snippet øD "Delta" iA
+\Delta $0
+endsnippet
+
+context "math()"
+snippet øi "pi" iA
+\pi $0
+endsnippet
+
+context "math()"
+snippet øI "Pi" iA
+\Pi $0
+endsnippet
+
+context "math()"
+snippet øq "dell" iA
+\dell $0
 endsnippet
 
 context "math()"
@@ -1016,11 +1137,11 @@ endsnippet
 
 # Other
 snippet <! "normal" iA
-\triangleleft
+\triangleleft $0
 endsnippet
 
 snippet <> "hokje" iA
-\diamond
+\diamond $0
 endsnippet
 
 context "math()"
@@ -1046,58 +1167,17 @@ snippet bigfun "Big function" iA
 .\end{align*}
 endsnippet
 
-
-# Hat Snippets 
 priority 10
 context "math()"
-snippet "bar" "bar" riA
-\overline{$1}$0
-endsnippet
-
-priority 100
-context "math()"
-snippet "([a-zA-Z])bar" "bar" riA
-\overline{`!p snip.rv=match.group(1)`}
+snippet "obrace" "underbrace" riA
+\overbrace{${1:x}}^\text{${2:Notes}} $0
 endsnippet
 
 priority 10
 context "math()"
-snippet conj "conjugate" iA
-\overline{$1}$0
+snippet "ubrace" "underbrace" riA
+\underbrace{${1:x}}_\text{${2:Notes}} $0
 endsnippet
-
-priority 10
-context "math()"
-snippet "hat" "hat" riA
-\hat{$1}$0
-endsnippet
-
-priority 10
-context "math()"
-snippet "dot" "dot" riA
-\dot{$1}$0
-endsnippet
-
-priority 10
-context "math()"
-snippet "Dot" "ddot" riA
-\ddot{$1}$0
-endsnippet
-
-
-priority 100
-context "math()"
-snippet "([a-zA-Z])hat" "hat" riA
-\hat{`!p snip.rv=match.group(1)`}
-endsnippet
-
-priority 10
-context "math()"
-snippet "mb" "bold math" riA
-\mathbf{$1}$0
-endsnippet
-
 
 
 # vim:ft=snippets
-
