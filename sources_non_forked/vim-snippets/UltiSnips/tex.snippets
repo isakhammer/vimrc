@@ -71,6 +71,7 @@ snippet template "Basic template" b
 
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
+\newtheorem{example}{Example}
 
 
 \begin{document}
@@ -239,11 +240,18 @@ snippet todoi "Todo Inline Box" b
 \todo[inline]{ $0 }
 endsnippet
 
-snippet answer "Answer Box" b
+snippet answerr "Answer Box" b
 \begin{tcolorbox}
 	\textbf{Answer.} $0
 \end{tcolorbox}
 endsnippet
+
+snippet examplee "Example Box" b
+\begin{example}
+	$0
+\end{example}
+endsnippet
+
 
 # Figures and Tables
 snippet table "Table environment" b
