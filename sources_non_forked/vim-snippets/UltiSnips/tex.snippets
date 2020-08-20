@@ -71,7 +71,7 @@ snippet template "Basic template" b
 
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
-\newtheorem{example}{Example}
+%\newtheorem{example}{Example}
 
 
 \begin{document}
@@ -247,9 +247,9 @@ snippet answerr "Answer Box" b
 endsnippet
 
 snippet examplee "Example Box" b
-\begin{example}
-	$0
-\end{example}
+\begin{tcolorbox}
+	\textbf{Example.} $0
+\end{tcolorbox}
 endsnippet
 
 
@@ -358,8 +358,7 @@ endsnippet
 snippet split "split equation" bA
 \begin{split}
 	${1:${VISUAL}}
-\end{split}
-$0
+\end{split} $0
 endsnippet
 
 
@@ -472,7 +471,7 @@ snippet == "equals" iA
 endsnippet
 
 context "math()"
-snippet != "equals" iA
+snippet != " not equals" iA
 \neq
 endsnippet
 
