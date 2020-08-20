@@ -79,6 +79,11 @@ snippet template "Basic template" b
 \tableofcontents
 \newpage
 $0
+
+\newpage
+\section{References}%
+\label{sec:references}
+
 \bibliographystyle{plain}
 \bibliography{references}
 \end{document}
@@ -380,26 +385,26 @@ endsnippet
 ########################
 
 snippet => "implies" Ai
-\implies
+\implies $0
 endsnippet
 
 snippet =< "implied by" Ai
-\impliedby
+\impliedby $0
 endsnippet
 
 context "math()"
 snippet iff "iff" Ai
-\iff
+\iff $0
 endsnippet
 
 
 context "math()"
 snippet // "Fraction" iA
-\\frac{$1}{$2}$0
+\\frac{$1}{$2} $0
 endsnippet
 
 snippet / "Fraction" i
-\\frac{${VISUAL}}{$1}$0
+\\frac{${VISUAL}}{$1} $0
 endsnippet
 
 context "math()"
@@ -751,7 +756,7 @@ endsnippet
 ###############
 
 snippet sum "sum" w
-\sum_{${1:i}=${2:1}}^{${3:\infty}} ${0}
+\sum_{${1:i=${2:1}}}^{${3:\infty}} ${0}
 endsnippet
 
 snippet lim "limit" w
@@ -1147,7 +1152,7 @@ endsnippet
 
 context "math()"
 snippet øq "dell" iA
-\dell $0
+\partial $0
 endsnippet
 
 context "math()"
