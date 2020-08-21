@@ -100,7 +100,7 @@ endsnippet
 ##########################
 
 # Text 
-snippet bd "bold text"
+snippet bb "bold text"
 \textbf{${1}} ${0}
 endsnippet
 
@@ -780,15 +780,15 @@ snippet prod "product" w
 endsnippet
 
 snippet part "d/dx" w
-\frac{\partial ${1}}{\partial ${2:x}} $0
+\frac{\partial ${1}}{\partial ${2}} $0
 endsnippet
 
-snippet dell "dx" w
-\partial $0
-endsnippet
+# snippet dell "dx" w
+# \partial $0
+# endsnippet
 
 snippet der "d/dx" w
-\frac{d ${1:V}}{d ${2:x}} $0
+\frac{d ${1:V}}{d ${2}} $0
 endsnippet
 
 
@@ -804,8 +804,8 @@ snippet ** "cdot" iA
 endsnippet
 
 priority 100
-snippet o* "cdot" iA
-\cdot $0
+snippet o* "circle" iA
+\circ $0
 endsnippet
 
 context "math()"
@@ -940,7 +940,7 @@ endsnippet
 
 context "math()"
 snippet mcal "mathcal" iA
-\mathcal{$1}$0
+\mathcal{$1} $0
 endsnippet
 
 
@@ -966,35 +966,35 @@ endsnippet
 priority 100
 context "math()"
 snippet -> "to" iA
-\to
+\to $0
 endsnippet
 
 priority 200
 context "math()"
 snippet <-> "leftrightarrow" iA
-\leftrightarrow
+\leftrightarrow $0
 endsnippet
 
 context "math()"
 snippet !> "mapsto" iA
-\mapsto
+\mapsto $0
 endsnippet
 
 context "math()"
 snippet \\\ "setminus" iA
-\setminus
+\setminus $0
 endsnippet
 
 snippet >> ">>" iA
-\gg
+\gg $0
 endsnippet
 
 snippet << "<<" iA
-\ll
+\ll $0
 endsnippet
 
 snippet ~~ "~" iA
-\sim
+\sim $0
 endsnippet
 
 # Sets
@@ -1014,7 +1014,7 @@ snippet cq "subset" Ai
 endsnippet
 
 snippet OO "emptyset" iA
-\O $0
+\emptyset $0
 endsnippet
 
 context "math()"
