@@ -803,6 +803,11 @@ snippet ** "cdot" iA
 \cdot $0
 endsnippet
 
+priority 100
+snippet o* "cdot" iA
+\cdot $0
+endsnippet
+
 context "math()"
 snippet norm "norm" iA
 \|$1\|$0
@@ -948,7 +953,7 @@ endsnippet
 priority 300
 context "math()"
 snippet dint "integral" wA
-\int_{${1:-\infty}}^{${2:\infty}} ${3:${VISUAL}} $0
+\int_{${1:}}^{${2:}} ${3:${VISUAL}} $0
 endsnippet
 
 priority 200
@@ -1095,10 +1100,10 @@ snippet øn "nabla" iA
 \nabla $0
 endsnippet
 
-context "math()"
-snippet øN "Nabla" iA
-\Nabla $0
-endsnippet
+# context "math()"
+# snippet øN "Nabla" iA
+# \Nabla $0
+# endsnippet
 
 context "math()"
 snippet øe "epsilon" iA
