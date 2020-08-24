@@ -42,6 +42,7 @@ snippet template "Basic template" b
 \usepackage{mathtools}
 \usepackage{enumerate}
 \usepackage{todonotes}
+\usepackage{float}
 
 
 \usepackage{hyperref} 
@@ -1236,6 +1237,11 @@ snippet øq "dell" iA
 endsnippet
 
 context "math()"
+snippet ør "rho" iA
+\rho $0
+endsnippet
+
+context "math()"
 snippet lll "fancy l" iA
 \ell $0
 endsnippet
@@ -1250,18 +1256,23 @@ snippet fsi "sin" iA
 endsnippet
 
 context "math()"
+snippet fco "sin" iA
+\cos $0
+endsnippet
+
+context "math()"
 snippet fasi "arcsin" iA
 \arcsin $0
 endsnippet
 
 context "math()"
-snippet facos "arccos" iA
+snippet faco "arccos" iA
 \arccos $0
 endsnippet
 
 context "math()"
 snippet fmi "min" iA
-\arccos $0
+\min $0
 endsnippet
 
 context "math()"
@@ -1316,13 +1327,13 @@ endsnippet
 priority 10
 context "math()"
 snippet "obrace" "underbrace" riA
-\overbrace{${1:x}}^\text{${2:Notes}} $0
+\overbrace{${1}}^\text{${2}} $0
 endsnippet
 
 priority 10
 context "math()"
 snippet "ubrace" "underbrace" riA
-\underbrace{${1:x}}_\text{${2:Notes}} $0
+\underbrace{${1}}_\text{${2}} $0
 endsnippet
 
 # vim:ft=snippets
