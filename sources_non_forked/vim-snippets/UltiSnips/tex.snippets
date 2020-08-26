@@ -26,13 +26,9 @@ endglobal
 #  Template  #
 ##############
 
-snippet template "Basic template" b
-\documentclass{article}
-\usepackage[utf8]{inputenc}
 
-\title{${1:Notes}}
-\author{isakhammer }
-\date{${2:2020}}
+snippet tempdep "templat dependencies" b
+%%%% DEPENDENCIES %%%%%%
 
 \usepackage{natbib}
 \usepackage{graphicx}
@@ -81,6 +77,21 @@ snippet template "Basic template" b
 	\vskip 0.4cm
 	}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+endsnippet
+
+snippet template "Basic template" b
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{${1:Notes}}
+\author{isakhammer }
+\date{${2:2020}}
+
+% 
+${3:tempdep}
+%
 
 \begin{document}
 \maketitle
@@ -698,7 +709,7 @@ endsnippet
 
 context "math()"
 snippet rs "^*" iA
-^{*}
+^{*$1}$0
 endsnippet
 
 context "math()"
@@ -1071,9 +1082,10 @@ snippet nnn "bigcap" iA
 endsnippet
 
 
-#############
-#  Symbols  #
-#############
+########################
+#  capital - mappings  #
+########################
+
 
 context "math()"
 snippet NN "n" iA
@@ -1344,8 +1356,10 @@ snippet fPp "Probability" iA
 p_{${1:X \mid ${2:Y}}} $0
 endsnippet
 
+###########
+#  Other  #
+###########
 
-# Other
 snippet <! "normal" iA
 \triangleleft $0
 endsnippet
@@ -1354,10 +1368,10 @@ snippet <> "hokje" iA
 \diamond $0
 endsnippet
 
-context "math()"
-snippet '(?<!i)sts' "text subscript" irA
-_\text{$1} $0
-endsnippet
+# context "math()"
+# snippet '(?<!i)sts' "text subscript" irA
+# _\text{$1} $0
+# endsnippet
 
 context "math()"
 snippet case "cases" wA
