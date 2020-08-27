@@ -724,25 +724,25 @@ snippet rd "to the ... power" iA
 ^{($1)$2}$0
 endsnippet
 
-# context "math()"
-# snippet invs "inverse" iA
-# ^{-1}
-# endsnippet
+context "math()"
+snippet invs "inverse" iA
+^{-1 $1} $0
+endsnippet
 
 context "math()"
 snippet compl "complement" iA
-^{c}
+^{c $1} $0
 endsnippet
 
 context "math()"
 snippet dag "dagger" iA
-^{\dagger}
+\dagger $0 
 endsnippet
 
 priority 10
 context "math()"
 snippet "bar" "bar" riA
-\overline{$1}$0
+\overline{$1} $0
 endsnippet
 
 priority 100
@@ -792,30 +792,37 @@ endsnippet
 #  operators  #
 ###############
 
+context "math()"
 snippet sum "sum" w
 \sum_{${1:i=${2:1}}}^{${3}} ${0}
 endsnippet
 
+context "math()"
 snippet lim "limit" w
 \lim_{${1:n} \to ${2:\infty}}
 endsnippet
 
+context "math()"
 snippet sup "sup" w
 \sup_{${1}} $0
 endsnippet
 
+context "math()"
 snippet sstack "substack" w
 \substack{${1}} $0
 endsnippet
 
+context "math()"
 snippet limsup "limsup" w
 \limsup_{${1:n} \to ${2:\infty}}
 endsnippet
 
+context "math()"
 snippet prod "product" w
 \prod_{${1:n=${2:1}}}^{${3:\infty}} ${4:${VISUAL}} $0
 endsnippet
 
+context "math()"
 snippet part "d/dx" w
 \frac{\partial ${1}}{\partial ${2}} $0
 endsnippet
@@ -993,11 +1000,11 @@ snippet dint "integral" wA
 \int_{${1:}}^{${2:}} ${3:${VISUAL}} $0
 endsnippet
 
-priority 200
-context "math()"
-snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta)' "ln" rwA
-\\`!p snip.rv = match.group(1)`
-endsnippet
+# priority 200
+# context "math()"
+# snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta)' "ln" rwA
+# \\`!p snip.rv = match.group(1)`
+# endsnippet
 
 
 priority 100
@@ -1052,9 +1059,20 @@ snippet cc "subset" Ai
 endsnippet
 
 context "math()"
+snippet cC "subset" Ai
+\supset $0
+endsnippet
+
+context "math()"
 snippet cq "subset" Ai
 \subseteq $0
 endsnippet
+
+context "math()"
+snippet cQ "subset" Ai
+\supseteq $0
+endsnippet
+
 
 snippet OO "emptyset" iA
 \emptyset $0
@@ -1138,6 +1156,11 @@ endsnippet
 context "math()"
 snippet mB "math" iA
 \mathbb{$1} $0
+endsnippet
+
+context "math()"
+snippet mfrak "math" iA
+\mathfrak{$1} $0
 endsnippet
 
 ################
