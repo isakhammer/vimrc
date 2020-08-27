@@ -28,7 +28,7 @@ endglobal
 
 
 snippet tempdep "templat dependencies" b
-%%%% DEPENDENCIES %%%%%%
+%%%% DEPENDENCIES v1.1 %%%%%%
 
 \usepackage{natbib}
 \usepackage{graphicx}
@@ -332,8 +332,10 @@ snippet desc "Description" b
 \end{description}
 endsnippet
 
-snippet Para "Paragraph" b
+snippet ppp "Paragraph" wA
+
 \newpara
+$1
 endsnippet
 
 ######################
@@ -497,7 +499,7 @@ endsnippet
 
 context "math()"
 snippet == "equals" iA
-&= $1 
+&= $1 \\\
 endsnippet
 
 context "math()"
@@ -845,7 +847,7 @@ endsnippet
 
 context "math()"
 snippet norm "norm" iA
-\|$1\|$0
+\|$1\|_{$2}^{$3}$0
 endsnippet
 
 context "math()"
@@ -1016,6 +1018,12 @@ snippet !> "mapsto" iA
 endsnippet
 
 context "math()"
+snippet darrow "downarrow" iA
+\downarrow $0
+endsnippet
+
+
+context "math()"
 snippet \mm "setminus" iA
 \setminus $0
 endsnippet
@@ -1107,24 +1115,29 @@ snippet ZZ "Z" iA
 \mathbb{Z} $0
 endsnippet
 
-context "math()"
-snippet HH "H" iA
-\mathbb{H} $0
-endsnippet
+# context "math()"
+# snippet HH "H" iA
+# \mathbb{H} $0
+# endsnippet
 
-context "math()"
-snippet DD "D" iA
-\mathbb{D} $0
-endsnippet
+# context "math()"
+# snippet DD "D" iA
+# \mathbb{D} $0
+# endsnippet
 
 context "math()"
 snippet CC "C" iA
 \mathbb{C} $0
 endsnippet
 
+# context "math()"
+# snippet II "II" iA
+# \mathbb{II} $0
+# endsnippet
+
 context "math()"
-snippet II "II" iA
-\mathbb{II} $0
+snippet mB "math" iA
+\mathbb{$1} $0
 endsnippet
 
 ################
@@ -1190,6 +1203,12 @@ context "math()"
 snippet øT "Theta" iA
 \Theta $0
 endsnippet
+
+context "math()"
+snippet øy "tau" iA
+\tau $0
+endsnippet
+
 
 context "math()"
 snippet øb "Beta" iA
@@ -1322,12 +1341,12 @@ endsnippet
 
 context "math()"
 snippet fmi "min" iA
-\min $0
+\min_{$1} $0
 endsnippet
 
 context "math()"
 snippet fma "inf" iA
-\max $0
+\max_{$1} $0
 endsnippet
 
 context "math()"
@@ -1337,14 +1356,13 @@ endsnippet
 
 context "math()"
 snippet fin "inf" iA
-\inf $0
+\inf_{$1} $0
 endsnippet
 
 context "math()"
 snippet fsu "sup" iA
-\sup $0
+\sup_{$1} $0
 endsnippet
-
 
 context "math()"
 snippet fPr "Probability" iA
@@ -1354,6 +1372,14 @@ endsnippet
 context "math()"
 snippet fPp "Probability" iA
 p_{${1:X \mid ${2:Y}}} $0
+endsnippet
+
+##################
+#  F - mappings  #
+##################
+context "math()"
+snippet Fno "function norm" iA
+\sup _{${1:x \neq 0}} \sqrt{\frac{${2:\|A \|_{2}^{2}}}{ ${3: \|x\|_{2}^{2}}}} $4
 endsnippet
 
 ###########
@@ -1378,6 +1404,13 @@ snippet case "cases" wA
 \begin{cases}
 	$1
 \end{cases}
+endsnippet
+
+context "math()"
+snippet rcase "rcases" wA
+\begin{rcases}
+	$1
+\end{rcases}
 endsnippet
 
 snippet SI "SI" iA
