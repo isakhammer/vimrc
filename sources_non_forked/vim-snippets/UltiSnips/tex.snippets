@@ -28,7 +28,7 @@ endglobal
 
 
 snippet tempdep "templat dependencies" b
-%%%% DEPENDENCIES v1.2 %%%%%%
+%%%% DEPENDENCIES v1.3 %%%%%%
 
 \usepackage{natbib}
 \usepackage{graphicx}
@@ -39,6 +39,7 @@ snippet tempdep "templat dependencies" b
 %\usepackage{enumerate}
 \usepackage{enumitem}
 \usepackage{todonotes}
+\usepackage{esint}
 \usepackage{float}
 
 
@@ -961,6 +962,14 @@ $1
 $0
 endsnippet
 
+context "math()"
+snippet vmat "vmat" iA
+\begin{vmatrix} 
+$1
+\end{vmatrix} 
+$0
+endsnippet
+
 # context "math()"
 # snippet cvec "column vector" iA
 # ${1:x}_${2:1}\\\\
@@ -1047,6 +1056,25 @@ context "math()"
 snippet dint "integral" wA
 \int_{${1:}}^{${2:}} ${3:${VISUAL}} $0
 endsnippet
+
+priority 300
+context "math()"
+snippet dfint "horisontal integral" wA
+\fint_{${1:}}^{${2:}} ${3:${VISUAL}} $0
+endsnippet
+
+priority 300
+context "math()"
+snippet doint "Closed integral" wA
+\oint_{${1:}}^{${2:}} ${3:${VISUAL}} $0
+endsnippet
+
+priority 300
+context "math()"
+snippet doiint "Closed double integral" wA
+\oint_{${1:}}^{${2:}} ${3:${VISUAL}} $0
+endsnippet
+
 
 # priority 200
 # context "math()"
@@ -1333,6 +1361,11 @@ snippet øy "tau" iA
 \tau $0
 endsnippet
 
+context "math()"
+snippet øj "eta" iA
+\eta $0
+endsnippet
+
 
 context "math()"
 snippet øb "Beta" iA
@@ -1561,13 +1594,13 @@ endsnippet
 priority 10
 context "math()"
 snippet "obrace" "overbrace" riA
-\overbrace{${1}} $0
+\overbrace{${1}}^{${2}} $0
 endsnippet
 
 priority 10
 context "math()"
 snippet "ubrace" "underbrace" riA
-\underbrace{${1}} $0
+\underbrace{${1}}_{${2}} $0
 endsnippet
 
 # vim:ft=snippets
