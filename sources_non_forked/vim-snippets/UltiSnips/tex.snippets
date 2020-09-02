@@ -28,7 +28,7 @@ endglobal
 
 
 snippet tempdep "templat dependencies" b
-%%%% DEPENDENCIES v1.1 %%%%%%
+%%%% DEPENDENCIES v1.2 %%%%%%
 
 \usepackage{natbib}
 \usepackage{graphicx}
@@ -36,7 +36,8 @@ snippet tempdep "templat dependencies" b
 \usepackage{amsthm}
 \usepackage{amsfonts}
 \usepackage{mathtools}
-\usepackage{enumerate}
+%\usepackage{enumerate}
+\usepackage{enumitem}
 \usepackage{todonotes}
 \usepackage{float}
 
@@ -300,8 +301,15 @@ endsnippet
 
 
 # Enumeration
-snippet enumm "Enumerate" bA
-\begin{enumerate}
+snippet enuma "Enumerate" bA
+\begin{enumerate}[label=(\alph*)]
+	\item$0
+\end{enumerate}
+endsnippet
+
+# Enumeration
+snippet enumi "Enumerate" bA
+\begin{enumerate}[label=(\roman*)]
 	\item$0
 \end{enumerate}
 endsnippet
@@ -604,12 +612,12 @@ endsnippet
 
 context "math()"
 snippet x22 "x1" iA
-x_{1}
+x_{2}
 endsnippet
 
 context "math()"
 snippet y00 "x0" iA
-x_{0}
+y_{0}
 endsnippet
 
 context "math()"
@@ -618,8 +626,28 @@ y_{1}
 endsnippet
 
 context "math()"
-snippet y22 "x1" iA
-y_{1}
+snippet y22 "y1" iA
+y_{2}
+endsnippet
+
+context "math()"
+snippet t00 "x0" iA
+t_{0}
+endsnippet
+
+context "math()"
+snippet t11 "x1" iA
+t_{1}
+endsnippet
+
+context "math()"
+snippet t22 "y1" iA
+t_{2}
+endsnippet
+
+context "math()"
+snippet tii "xi" iA
+t_{i}
 endsnippet
 
 context "math()"
@@ -633,6 +661,11 @@ y_{i}
 endsnippet
 
 context "math()"
+snippet tjj "xj" iA
+t_{j}
+endsnippet
+
+context "math()"
 snippet xjj "xj" iA
 x_{j}
 endsnippet
@@ -640,6 +673,11 @@ endsnippet
 context "math()"
 snippet yjj "yj" iA
 y_{j}
+endsnippet
+
+context "math()"
+snippet tkk "xk" iA
+t_{k}
 endsnippet
 
 context "math()"
@@ -658,6 +696,16 @@ x_{n+1}
 endsnippet
 
 context "math()"
+snippet tNN "t" iA
+t_{N}
+endsnippet
+
+context "math()"
+snippet tMM "t" iA
+t_{M}
+endsnippet
+
+context "math()"
 snippet xMM "x" iA
 x_{M}
 endsnippet
@@ -667,9 +715,9 @@ snippet xmm "x" iA
 x_{m}
 endsnippet
 
-snippet R0+ "R0+" iA
-\\R_0^+
-endsnippet
+# snippet R0+ "R0+" iA
+# \\R_0^+
+# endsnippet
 
 snippet ooo "\infty" iA
 \infty
@@ -832,7 +880,7 @@ endsnippet
 # endsnippet
 
 snippet der "d/dx" w
-\frac{d ${1:V}}{d ${2}} $0
+\frac{d ${1}}{d ${2}} $0
 endsnippet
 
 
@@ -1068,10 +1116,10 @@ snippet cq "subset" Ai
 \subseteq $0
 endsnippet
 
-context "math()"
-snippet cQ "subset" Ai
-\supseteq $0
-endsnippet
+# context "math()"
+# snippet cQ "subset" Ai
+# \supseteq $0
+# endsnippet
 
 
 snippet OO "emptyset" iA
@@ -1162,6 +1210,59 @@ context "math()"
 snippet mfrak "math" iA
 \mathfrak{$1} $0
 endsnippet
+################
+#  æ-mappings  #
+################
+context "math()"
+snippet æø "nabla" iA
+_{0} $0
+endsnippet
+
+context "math()"
+snippet æl "nabla" iA
+_{1} $0
+endsnippet
+
+context "math()"
+snippet æk "nabla" iA
+_{2} $0
+endsnippet
+
+context "math()"
+snippet æj "nabla" iA
+_{${1: N}-1} $0
+endsnippet
+
+context "math()"
+snippet æh "nabla" iA
+_{${1: N}} $0
+endsnippet
+
+context "math()"
+snippet æØ "nabla" iA
+^{0} $0
+endsnippet
+
+context "math()"
+snippet æL "nabla" iA
+^{1} $0
+endsnippet
+
+context "math()"
+snippet æK "nabla" iA
+^{2} $0
+endsnippet
+
+context "math()"
+snippet æJ "nabla" iA
+^{${1: N}-1} $0
+endsnippet
+
+context "math()"
+snippet æH "nabla" iA
+^{${1: N}} $0
+endsnippet
+
 
 ################
 #  ø-mappings  #
@@ -1385,6 +1486,11 @@ endsnippet
 context "math()"
 snippet fin "inf" iA
 \inf_{$1} $0
+endsnippet
+
+context "math()"
+snippet fli "sup" iA
+\lim_{$1} $0
 endsnippet
 
 context "math()"
