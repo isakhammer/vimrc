@@ -101,6 +101,7 @@ nnoremap <localleader>lca :VimtexStop<cr>:VimtexClean!<cr>
 " Autosave
 au BufRead,BufNewFile *.tex :call EnableAutoSave()
 
+
 " incscape-figures plug-in
 inoremap <localleader>f <Esc>: silent exec '.!inkscape-figures create "'.getline('.').'" "'.b:vimtex.root.'/figures/"'<CR><CR>:w<CR>
 nnoremap <localleader>f : silent exec '!inkscape-figures edit "'.b:vimtex.root.'/figures/" > /dev/null 2>&1 &'<CR><CR>:redraw!<CR>
@@ -108,13 +109,6 @@ nnoremap <localleader>f : silent exec '!inkscape-figures edit "'.b:vimtex.root.'
 let g:tex_flavor='latex'
 let g:vimtex_quickfix_mode=0
 
-
-""""""""""""""""""""""""""""""
-" => Multi snips plug-in
-"""""""""""""""""""""""""""""""
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsJumpForwardTrigger='<tab>'
-let g:UltiSnipsJumpBackwardTrigger='<C-tab>'
 
 """"""""""""""""""""""""""""""
 " => Tex Conceal Plug-in
@@ -148,3 +142,83 @@ nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+
+call plug#begin('~/.vim/plugged')
+
+" Plug 'easymotion/vim-easymotion'
+" Plug 'tpope/vim-surround'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'jremmen/vim-ripgrep'
+"Plug 'rust-lang/rust.vim'
+" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+" Plug 'scrooloose/nerdtree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+" " Plug 'rhysd/vim-clang-format'
+" Plug 'tomasr/molokai'                       " Colorscheme
+" Plug 'morhetz/gruvbox'                      " Colorscheme
+" Plug 'tpope/vim-commentary'                 " gc(c) to comment out/in
+" Plug 'tpope/vim-endwise'                     " Auto-end structures
+" Plug 'vim-airline/vim-airline'              " Pretty statusline
+" Plug 'vim-airline/vim-airline-themes'
+" Plug 'airblade/vim-gitgutter'               " Git lines added/removed
+" Plug 'vim-scripts/CSApprox'                 " Fix terminal colorschemes
+" Plug 'bronson/vim-trailing-whitespace'      " Highlight trailing whitespace
+" Plug 'Raimondi/delimitMate'                 " Match ([{ etc
+" Plug 'Yggdroot/indentLine'                  " Mark indent levels
+" Plug 'vim-scripts/DoxygenToolkit.vim'       " Add :Dox command
+" Plug 'w0rp/ale'                             " Asynchronous Lint Engine
+" Plug 'elmcast/elm-vim'                      " Elm support
+" Plug 'sheerun/vim-polyglot'                 " Language support
+" Plug 'slashmili/alchemist.vim'              " Elixir autocomplete
+" Plug 'pangloss/vim-javascript'              " Javascript bundle
+" Plug 'sukima/xmledit'                       " Markup tag matching
+" filetype plugin on
+" Plug 'ludovicchabant/vim-gutentags'         " Painfree tags
+" Plug 'tpope/vim-projectionist'              " Dependency for phoenix.vim
+" Plug 'c-brenn/phoenix.vim'                  " Phoenix project navigation
+
+"Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp', 'h', 'hpp']}
+
+call plug#end()
+
+" Install plugins
+nmap <leader>si :PlugInstall
+
+""""""""""""""""""""
+"  You Complete Me
+""""""""""""""""""""
+
+"<c-P> and <c-N> to move up and down"
+
+" Turn off tab functionality."
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
+
+
+"""""""""""""""""
+"  FZF- finder  "
+"""""""""""""""""
+
+map <leader>F <Esc><Esc>:Files!<CR>
+inoremap <leader>F <Esc><Esc>:Blines!<CR>
+map <leader>c <Esc><Esc>:BCommits!<CR>
+
+map <leader>G :Rg 
+
+
+
+""""""""""""""""""""""""""""""
+" => Multi snips plug-in
+"""""""""""""""""""""""""""""""
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger='<tab>'
+let g:UltiSnipsJumpBackwardTrigger='<C-tab>'
