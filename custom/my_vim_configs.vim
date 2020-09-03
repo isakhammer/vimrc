@@ -79,7 +79,8 @@ cabbrev tb vert sb
 
 function EnableAutoSave()
   let g:auto_save = 1  
-  let g:auto_save_events = ["InsertLeave", "TextChanged","CursorHold", "CursorHoldI"] 
+  let g:auto_save_events = ["InsertLeave", 'TextChanged',"CursorHold", 'CursorHoldI'] 
+  "autocmd TextChanged,TextChangedI <buffer> silent write
 endfunction
 
 """"""""""""""""""""""""""""""
