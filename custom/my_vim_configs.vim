@@ -186,7 +186,7 @@ Plug 'jremmen/vim-ripgrep'
 " Plug 'tpope/vim-projectionist'              " Dependency for phoenix.vim
 " Plug 'c-brenn/phoenix.vim'                  " Phoenix project navigation
 
-"Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp', 'h', 'hpp']}
+""Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp', 'h', 'hpp']}
 
 call plug#end()
 

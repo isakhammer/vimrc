@@ -104,15 +104,15 @@ vnoremap lrF <esc>`>a"<esc>`<i"<esc>
 "inoremap $e ""<esc>i
 
 " Maybe not necessary to map autocomplete
-" inoremap $( ()<esc>i
-" inoremap $) ()<esc>i
-" inoremap $[ []<esc>i
-" inoremap $] []<esc>i
-" inoremap $} {}<esc>i
-" inoremap ${ {}<esc>i
-" inoremap $o{ {<esc>o}<esc>O
-" inoremap $' ''<esc>i
-" inoremap $" ""<esc>i
+inoremap ( ()<esc>i
+inoremap ) )<esc>i
+inoremap [ []<esc>i
+inoremap ] ]<esc>i
+inoremap } }<esc>i
+inoremap { {}<esc>i
+inoremap o{ {<esc>o}<esc>O
+inoremap ' ''<esc>i
+inoremap " ""<esc>i
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
