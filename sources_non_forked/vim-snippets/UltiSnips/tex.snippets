@@ -839,7 +839,7 @@ endsnippet
 
 priority 10
 context "math()"
-snippet "tlL" "tLL" riA
+snippet "til" "tilde" riA
 \widetilde{$1}$0
 endsnippet
 
@@ -878,6 +878,11 @@ endsnippet
 context "math()"
 snippet sstack "substack" w
 \substack{${1}} $0
+endsnippet
+
+context "math()"
+snippet rstack "stackrel" w
+\stackrel{${2:over}}{${1:eq}} $0
 endsnippet
 
 context "math()"
