@@ -366,6 +366,10 @@ snippet dpl "display" wA
 \displaystyle $0
 endsnippet
 
+context "math()"
+snippet lbl "label" wA
+\label{eq:{$1}}$0
+endsnippet
 
 snippet dm "Math" wA
 \[
@@ -379,7 +383,7 @@ endsnippet
 # endsnippet
 
 snippet eqref "equation ref" wA
-\eqref{eq:${1:label}} $0
+\eqref{eq:${1}} $0
 endsnippet
 
 
